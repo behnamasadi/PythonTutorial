@@ -1,0 +1,51 @@
+# Python Snippet Codes
+This repository contains my snippet codes for my Python projects. It includes varuois examples for:
+
+
+## [Jupyter Notebook/ Sympy](Jupyter_Tutorial)  
+
+## [GUI with Python QT5](PyQT5)  
+
+## [Machine Learning](Machine_Learning)  
+
+## Python Tutorials
+
+[Assert Statment](Tutorials/assert_statment.py)    
+[Attribute, Property](Tutorials/class/attribute_property_setter_getattr_setattr.py)  
+[Built-in Types and Functions](Tutorials/built-in_types_functions.py)  
+[Class](Tutorials/class)  
+[Classmethod, Staticmethod](Tutorials/class/classmethod_staticmethod.py)  
+[Creating setup Packages](Tutorials/creating_setup)  
+[Command Line Arguments, Flags (argv)](Tutorials/command_line_argv.py)  
+[Control Flow Structure](Tutorials/control-flow_structure.py)  
+[Cython Tutorial](Tutorials/cython_tutorial)  
+[Exception Handling](Tutorials/exception_handling.py)  
+[Executable Script](Tutorials/executable_script.py)  
+[File, Directory,IO, Serialization](Tutorials/file_directory_io_serialization.py)  
+[Functions](Tutorials/functions.py)  
+[Inheritence](Tutorials/class/inheritence.py)  
+[Json](Tutorials/json_code.py)  
+[Lambda](Tutorials/lambda.py)  
+[Logging](Tutorials/logging_code.py)  
+[Modules and Packages](Tutorials/modules_packages)  
+[Mutable and Immutable Types](Tutorials/mutable_vs_immutable.py)  
+[Networkx Graph](Tutorials/networkx_graph)  
+[Numpy Arrays](Tutorials/numpy_arrays.py)  
+[Ploting](Tutorials/ploting.py)  
+[PEP8, Beautifier, Pylint, Pychecker](Tutorials/pep8_beautifier_pylint.py)  
+[Polymorphism](Tutorials/class/polymorphism.py)  
+[Raise Exception](Tutorials/raise_exception.py)  
+[Regex](Tutorials/regex.py)  
+[Set, Tuples, List, Array, Dictionary](Tutorials/set_tuples_list_array_dictionary_collections.py)  
+[UnitTest](Tutorials/unit_test)  
+[Urllib](Tutorials/urllib_code.py)
+[XML](Tutorials/xml_parsing.py)    
+
+
+## [Design Pattern](Tutorials/design_pattern)
+[Behavioral](Tutorials/design_pattern/Behavioral)  
+[Creational](Tutorials/design_pattern/Creational)  
+[Structural](Tutorials/design_pattern/Structural)  
+
+
+![alt text](https://img.shields.io/badge/license-BSD-blue.svg)

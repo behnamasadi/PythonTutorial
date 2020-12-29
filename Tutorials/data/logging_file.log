@@ -1,0 +1,5 @@
+INFO 2019-11-16 00:51:44,260 -some info
+DEBUG 2019-11-16 00:51:44,260 -some debug
+WARNING 2019-11-16 00:51:44,260 -some warning
+ERROR 2019-11-16 00:51:44,260 -some error
+CRITICAL 2019-11-16 00:51:44,260 -some critical

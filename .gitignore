@@ -1,0 +1,12 @@
+.idea
+.settings
+.project
+.pydevproject
+Tutorials/temp
+data/*.log
+**/__pycache__/*
+**/build/*
+**/*.so
+**/.ipynb_checkpoints
+main.py
+.pkl
