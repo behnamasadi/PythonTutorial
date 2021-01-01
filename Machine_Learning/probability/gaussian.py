@@ -135,3 +135,43 @@ plt.show()
 
 
 
+# import matplotlib.pyplot as plt
+# import numpy as np
+# from scipy.stats import multivariate_normal
+#
+# def gaussian(x, mu, sigma):
+#         #return np.exp(-np.power(x - mu, 2.) / (2 * np.power(sig, 2.)))
+#         #return (1/(sigma*np.power(2*np.pi)))*np.exp(-0.5* np.power((x-mu/sigma),2) )
+#         return   np.exp(-0.5 * np.power((x - mu / sigma), 2))/(sigma * np.power(2 * np.pi,0.5))
+#
+#
+# x1=-10
+# x2=10
+# number_of_samples=200
+# mu=0
+# var=500
+# sigma=np.power(var,0.5)
+# print(sigma)
+# x=np.linspace(x1,x2,number_of_samples)
+# #y=gaussian(x, mu, sigma)
+# y = multivariate_normal.pdf(x, mean=0, cov=sigma)
+#
+#
+# plt.xlabel("x")
+# plt.ylabel("y=gaussian(x)")
+# line_1,=plt.plot(x,y,label='gaussian(x)')
+# plt.legend()
+# plt.legend(handles=[line_1])
+# plt.show()
+#
+# number_of_samples=500
+# x=np.random.randn(number_of_samples)
+# mu=np.sum(x)/number_of_samples
+# var=np.sum(np.power(x-mu,2))/number_of_samples
+# print(mu)
+# print(var)
+# bins=np.linspace(-5,5,200)
+# plt.hist(x,bins=bins,orientation='vertical')
+# plt.show()
+
+
