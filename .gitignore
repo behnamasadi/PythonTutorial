@@ -11,3 +11,4 @@ data/*.log
 main.py
 .pkl
 *.gz
+*.pyc

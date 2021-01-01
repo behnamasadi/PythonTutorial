@@ -89,3 +89,11 @@ for i in range(10,11):
 
 plt.legend(handles=labels)
 plt.show()
+
+
+
+
+
+
+
+
