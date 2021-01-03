@@ -4,7 +4,6 @@
 [Activation Function](activation_function.ipynb)  
 [Backpropagation](backpropagation.ipynb)  
 [Batch Normalization](batch_normalization.ipynb)  
-[Differentiation](differentiation.ipynb)  
 [Loss Functions](loss_functions.ipynb)  
 [Regularization](regularization.ipynb)  
 [Softmax](softmax.ipynb)  

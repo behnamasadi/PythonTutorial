@@ -25,8 +25,3 @@ plt.plot(ind, kdepdf, label='kde estimation', color="g")
 plt.title('Kernel Density Estimation')
 plt.legend()
 plt.show()
-
-
-
-
-
