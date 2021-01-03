@@ -7,5 +7,5 @@
 [Hidden Markov Model](hidden_markov_model)  
 [Iterative Closest Point Algorithm (ICP)](icp)  
 [Neural Network](nn)  
-[Otimisation](optimisation)  
+[Optimisation](optimisation)  
 [Probability](probability)  
