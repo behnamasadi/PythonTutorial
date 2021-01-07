@@ -9,7 +9,7 @@ This repository contains my snippet codes for my Python projects. It includes va
 ## [Machine Learning](Machine_Learning)  
 
 ## Python Tutorials
-
+[@ Symbol](Tutorials/@_symbol.py)
 [Assert Statment](Tutorials/assert_statment.py)    
 [Attribute, Property](Tutorials/class/attribute_property_setter_getattr_setattr.py)  
 [Built-in Types and Functions](Tutorials/built-in_types_functions.py)  
@@ -19,6 +19,7 @@ This repository contains my snippet codes for my Python projects. It includes va
 [Command Line Arguments, Flags (argv)](Tutorials/command_line_argv.py)  
 [Control Flow Structure](Tutorials/control-flow_structure.py)  
 [Cython Tutorial](Tutorials/cython_tutorial)  
+[Decorators](Tutorials/decorators.py)
 [Exception Handling](Tutorials/exception_handling.py)  
 [Executable Script](Tutorials/executable_script.py)  
 [File, Directory,IO, Serialization](Tutorials/file_directory_io_serialization.py)  
@@ -39,7 +40,9 @@ This repository contains my snippet codes for my Python projects. It includes va
 [Set, Tuples, List, Array, Dictionary](Tutorials/set_tuples_list_array_dictionary_collections.py)  
 [UnitTest](Tutorials/unit_test)  
 [Urllib](Tutorials/urllib_code.py)
+[With Statement, Contex Manager, Contextlib](Tutorials/with_statement_contex_manager_contextlib.py)
 [XML](Tutorials/xml_parsing.py)    
+[Yield, Generators](Tutorials/yield_generators.py)
 [Code Visualizer](http://pythontutor.com/visualize.html#mode=display)
 
 

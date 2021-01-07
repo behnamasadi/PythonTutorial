@@ -12,3 +12,4 @@ main.py
 .pkl
 *.gz
 *.pyc
+.ipynb_checkpoints
