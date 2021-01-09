@@ -3,22 +3,93 @@ import numpy as np
 import math
 
 
-####################################### figure, ax, subplots(), subplot(), add_subplot() ######################################
+####################################### figure ######################################
 
-# figure
-# Whole figure is regarded as the figure object (matplotlib.figure.Figure). We can use figure object if we want to change figure-level attributes like fig.suptitle(title)/ ackground color behind all subplots
-#or save the figure as an image file later (e.g. with fig.savefig('yourfilename.png'))
+# Figure: It is the top most layer of the plot. Figure constitutes of subplots, sub axis, titles, subtitles, legends,..
+
+# matplotlib.pyplot.figure(num=None, figsize(float, float))
+# Create a new figure, or activate an existing figure.
+# num: int or str, optional A unique identifier for the figure.
+
+# If a figure with that identifier already exists, this figure is made active and returned. An integer refers to the
+# Figure.number attribute, a string refers to the figure label.
+
+plt.figure(1)
+print ("current figure = " + str(plt.gcf().number))
+
+plt.figure(2)
+print ("current figure = " + str(plt.gcf().number))
 
 
-# ax
+
+
+# now switch back to figure 1 and make some changes
+x=np.linspace(start=0, stop=10, num=50)
+plt.figure(1)
+plt.plot(x,x**2)
+
+# now switch back to figure 2 and make some changes
+plt.figure(1)
+plt.plot(x,x**3)
+# Get the current Axes instance on the current figure
+ax = plt.gca()
+ax.set_title('y=x**3')
+plt.show()
+
+print ("Figure numbers are = " + str(plt.get_fignums()))
+####################################### ax  ######################################
+# Axes: It’s a part of the Figure, nothing but a subplot. Axes define a subplot, we can write our
+# own x-axis limits, y-axis limits, their labels, the type of graph. It controls every detail inside the subplot
 # is the object that you can plot in, ax is actually a numpy array
 
-# subplots() is a function that returns a tuple containing a figure and axes object(s).
 
-
-# subplot()
+####################################### subplot() ######################################
+# pyplot.subplot(nrows, ncols, index)
 # The subplot() command specifies numrows, numcols, fignum where fignum ranges from 1 to numrows*numcols.
 # subplot(211) is identical to subplot(2, 1, 1).
+# index starts at 1 in the upper left corner and increases to the right. index can also be a
+# two-tuple specifying the (first, last) indices (1-based, and including last)
+x=np.linspace(start=2, stop=20, num=50)
+plt.figure()
+plt.subplot(121)
+plt.plot(x,np.log(x))
+
+plt.subplot(122)
+plt.plot(x,np.exp(x))
+plt.show()
+
+####################################### subplots() ######################################
+# pyplot.subplots(nrows=1, ncols=1)
+# subplots() is a function that returns a tuple containing a figure and axes.
+#fig, ((ax1, ax2), (ax3, ax4)) = plt.subplot(2, 2)
+
+# the code above can be written as
+x=np.linspace(start=2, stop=20, num=50)
+plt.figure()
+fix,(ax1,ax2)=plt.subplots(nrows=1, ncols=2)
+ax1.plot(x,np.log(x))
+ax2.plot(x,np.exp(x))
+plt.show()
+
+
+####################################### add_subplot() ######################################
+# matplotlib.pyplot.figure.add_subplot(nrows, ncols, index)
+# fig.add_subplot(ax)
+
+# fig = plt.figure()
+# ax = fig.add_subplot(111)
+# is equal to
+# fig, ax = plt.subplots()
+
+
+
+
+
+
+
+
+
+
 
 ####################################### Example of accessing subplots(), ax ######################################
 
