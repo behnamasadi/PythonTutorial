@@ -331,3 +331,14 @@ plt.setp(ax.get_xticklabels(), rotation=45, ha="right", rotation_mode="anchor")
 
 plt.show()
 
+
+
+####################################### contour #######################################
+
+x = np.linspace(-20,20,100)
+w = np.linspace(-50,50,50)
+X, W = np.meshgrid(x,w)
+Z=20*X**2+W**2
+levels=np.arange(np.min(Z), np.max(Z),10)
+plt.contourf(X,W,Z,levels=levels)
+plt.show()
