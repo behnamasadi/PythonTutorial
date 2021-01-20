@@ -18,9 +18,6 @@ ax.set_xlabel('X')
 ax.set_ylabel('W')
 ax.set_zlabel('Error function')
 
-plt.contour([X, W], Z )
-
-
 plt.show()
 
 ############################################# Fixed input x=-0.5 ###################################################
@@ -59,7 +56,7 @@ ax.set_zlabel('Error function')
 plt.show()
 
 
-#######################################few x cost function #############################################
+####################################### few x cost function #############################################
 fig = plt.figure()
 ax = fig.gca(projection='3d')
 
@@ -87,5 +84,10 @@ for x in X:
 
 ax.scatter(x_s, w_s, z_s)
 plt.show()
+
+
+####################################### Rosenbrock function #############################################
+# is a non-convex
+# f(x,y)=(a-x)**2+b*(y-x**2)**2
 
 
