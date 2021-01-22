@@ -67,7 +67,7 @@ labels.append(data_without_noise)
 
 regularization_alpha = 20000
 
-for i in range(10,11):
+for i in range(10,13):
     polynominal_order=i
     new_x=xPolynominalExtender(x,polynominal_order )
 
