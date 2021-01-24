@@ -62,7 +62,7 @@ plt.xlabel('weights')
 plt.ylabel('classifier output probability of being obese')
 plt.legend()
 
-classifier_cut_off_value=1.0
+classifier_cut_off_value=0.97
 plt.plot([0,1],[classifier_cut_off_value,classifier_cut_off_value])
 plt.show()
 
@@ -92,9 +92,14 @@ for cut_of_value in cut_of_values:
     print("FPR={}".format(FPR) )
     FPRs.append(FPR)
 
-plt.scatter(FPRs,TPRs)
+
+second_classifier_TPRs=[0.5,0.5,0.6,0.65,0.65,0.65,1,1]
+second_classifier_FPRs=[0.0, 0.0,0.1,0.2,0.4,0.8,0.8,1]
+
+plt.plot(FPRs,TPRs)
+plt.plot(second_classifier_FPRs,second_classifier_TPRs)
 for i,txt in enumerate(cut_of_values):
-    plt.annotate(cut_of_values[i],  (FPRs[i],TPRs[i]))
+    plt.annotate(round(cut_of_values[i],2),  (FPRs[i],TPRs[i]))
 
 plt.xlabel('FPR (Fall Out, 1-Specificity)')
 plt.ylabel('TPR (Sensitivity, Recall )')
