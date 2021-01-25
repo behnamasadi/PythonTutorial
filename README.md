@@ -6,7 +6,18 @@ This repository contains my snippet codes for my Python projects. It includes va
 
 ## [GUI with Python QT5](PyQT5)  
 
-## [Machine Learning](Machine_Learning)  
+## [Machine Learning](Machine_Learning)
+
+## [Computer Vision](computer_vision)    
+
+## [Data Structure](data_structure)    
+
+## [Probability](probability)    
+
+## [Signal System](signal_system)    
+
+## [Calcus, Linear Algebra](calcus_linear_algebra)    
+
 
 ## Python Tutorials
 [@ Symbol](Tutorials/@_symbol.py)
