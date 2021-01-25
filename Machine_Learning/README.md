@@ -1,7 +1,7 @@
 # Machine Learning
 [Bias Variance](bias_variance)    
 [Classification](classification)  
-[Clustering](Clustering)  
+[Clustering](clustering)  
 [Convex Optimization](convex_optimization)  
 [Dimensionality Reduction, Manifold Learning](dimensionality_reduction_manifold_learning)  
 [Ensembling](ensembling)  
@@ -15,4 +15,3 @@
 [Neural Network](nn)  
 [Optimisation](optimisation)  
 [Regularization](regularization)  
-
