@@ -7,6 +7,7 @@
 [Ensembling](ensembling)  
 [Feature Preprocessing](feature_preprocessing)  
 [Feature Selection And Analysis](feature_selection_and_analysis)  
+[Generative And Discriminative Algorithm](generative_and_discriminative_algorithm)  
 [Hidden Markov Model](hidden_markov_model)  
 [Hyperparameter](hyperparameter)  
 [Learning Process Steps](learning_process_steps)  
