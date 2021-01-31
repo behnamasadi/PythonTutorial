@@ -50,11 +50,11 @@ This repository contains my snippet codes for my Python projects. It includes va
 [Regex](Tutorials/regex.py)  
 [Set, Tuples, List, Array, Dictionary](Tutorials/set_tuples_list_array_dictionary_collections.py)  
 [UnitTest](Tutorials/unit_test)  
-[Urllib](Tutorials/urllib_code.py)
-[With Statement, Contex Manager, Contextlib](Tutorials/with_statement_contex_manager_contextlib.py)
+[Urllib](Tutorials/urllib_code.py)  
+[With Statement, Contex Manager, Contextlib](Tutorials/with_statement_contex_manager_contextlib.py)  
 [XML](Tutorials/xml_parsing.py)    
-[Yield, Generators](Tutorials/yield_generators.py)
-[Code Visualizer](http://pythontutor.com/visualize.html#mode=display)
+[Yield, Generators](Tutorials/yield_generators.py)  
+[Code Visualizer](http://pythontutor.com/visualize.html#mode=display)  
 
 
 
