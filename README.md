@@ -20,7 +20,7 @@ This repository contains my snippet codes for my Python projects. It includes va
 
 
 ## Python Tutorials
-[@ Symbol](Tutorials/@_symbol.py)
+[@ Symbol](Tutorials/@_symbol.py)  
 [Assert Statment](Tutorials/assert_statment.py)    
 [Attribute, Property](Tutorials/class/attribute_property_setter_getattr_setattr.py)  
 [Built-in Types and Functions](Tutorials/built-in_types_functions.py)  
