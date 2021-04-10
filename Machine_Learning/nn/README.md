@@ -10,7 +10,3 @@
 [Softmax](softmax.ipynb)  
 [Transformers](transformers.ipynb)  
 [Weight Initialization](weight_initialization.ipynb)  
-
-
-
-
