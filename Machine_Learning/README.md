@@ -26,5 +26,6 @@
 - [Softmax](nn/softmax.ipynb)  
 - [Transformers](nn/transformers.ipynb)  
 - [Weight Initialization](nn/weight_initialization.ipynb)  
+
 [Optimization](optimization)  
 [Regularization](regularization)  
