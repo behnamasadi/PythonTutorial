@@ -1,4 +1,3 @@
-# https://stackoverflow.com/questions/49433936/how-to-initialize-weights-in-pytorch
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -38,10 +37,10 @@ layer_stds=[np.std(z) for _,z in Zs.items()]
 
 plt.figure()
 plt.subplot(121)
-plt.plot(Zs.keys(),layer_means,'ob-')
+plt.plot(list(Zs.keys()),layer_means,'ob-')
 plt.title('layer mean')
 plt.subplot(122)
-plt.plot(Zs.keys(),layer_stds,'or-')
+plt.plot(list(Zs.keys()),layer_stds,'or-')
 plt.title('layer std')
 
 

@@ -43,6 +43,7 @@ This repository contains my snippet codes for my Python projects. It includes va
 [Mutable and Immutable Types](Tutorials/mutable_vs_immutable.py)  
 [Networkx Graph](Tutorials/networkx_graph)  
 [Numpy Arrays](Tutorials/numpy_arrays.py)  
+[ProgressBar, tqdm](Tutorials/)
 [Ploting](Tutorials/ploting.py)  
 [PEP8, Beautifier, Pylint, Pychecker](Tutorials/pep8_beautifier_pylint.py)  
 [Polymorphism](Tutorials/class/polymorphism.py)  
