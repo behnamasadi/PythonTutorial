@@ -94,9 +94,93 @@ print(array.reshape(3,1).tolist())
 
 print('############################### Broadcasting ###############################')
 # broadcasting describes how np treats arrays with different shapes during arithmetic operations.
-x = np.arange(4)
-x = x.reshape(4,-1)
-print("x:\n",x)
+
+
+arr = np.arange(12).reshape(3,4)
+col_vector = np.array([5,6,7])
+
+#       arr         + col_vector
+
+# [[ 0  1  2  3]     [ 5
+#  [ 4  5  6  7]   +   6     =?
+#  [ 8  9 10 11]]      7  ]
+
+
+#1) First solution, using loops:
+num_cols = arr.shape[1]
+
+for col in range(num_cols):
+	arr[:, col] += col_vector
+
+#2) Second solution: column-stacking approach
+# turning the col_vector into an array:
+
+#[[ 0  1  2  3]       [[5 5 5 5]
+#[4  5  6  7]     +   [6 6 6 6]
+#[8  9 10 11]]        [7 7 7 7]]
+
+
+arr = np.arange(12).reshape(3,4)
+add_matrix = np.array([col_vector,] * num_cols).T
+
+arr += add_matrix
+
+#3) Third solution: Broadcasting
+# if we want to vectorize a loop where we are dealing with arrays that don't have similar sizes
+# the smaller array is “broadcast” across the larger array so that they have compatible shapes. Broadcasting
+# provides a means of vectorizing array operations so that looping occurs in C instead of Python
+
+# Rules of Broadcasting:
+# The rank is the total number of dimensions a NumPy array has. For example,
+# an array of shape (3, 4) has a rank of 2 and array of shape (3, 4, 3) has a rank of 3.
+
+# 1) To deem which two arrays are suitable for operations, NumPy compares the shape of the two arrays
+# dimension-by-dimension starting from the from right to left
+
+# 2) Two dimensions are said to be compatible if both of them are equal, or either one of them is 1.
+
+# 3) If both the dimensions are unequal and neither of them is 1, then NumPy will throw an error and halt.
+
+
+# Example Arrays with Equal Ranks
+
+# random array of shape (3,4,6,2)
+array_a = np.random.rand(3,4,6,2)
+array_b = np.random.rand(3,5,1,2)
+
+# array_a + array_b will raise an exception, since from right to left,
+
+# 2=2 is okay
+# 6,1 is okay (rule number 2)
+# 5,4 is NOT okay (rule number 2)
+
+
+# Example Arrays with Unequal Ranks
+array_a = np.random.rand(3,4,6,2)
+array_b = np.random.rand(4,6,2)
+
+
+array_a = np.random.rand(3,4,1,2)
+array_b = np.random.rand(8,2)
+print((array_a+array_b).shape)
+
+
+# this will raise an exception:
+array_a = np.random.rand(3,4,6,2)
+array_b = np.random.rand(3,4,6)
+# print((array_a+array_b).shape)
+
+
+arr = np.arange(12).reshape(3,4)
+col_vector = np.array([5,6,7])
+arr += add_matrix
+# What happens during Broadcasting
+# The array which has the size 1 in one (or more ) of its dimensions, will be repeated until it has the
+# same rank as the other array
+
+# ref: https://blog.paperspace.com/numpy-optimization-vectorization-and-broadcasting/
+
+
 
 print('############################### View, Copy ###############################')
 # copy is a new array, and the view is just a view of the original array.
