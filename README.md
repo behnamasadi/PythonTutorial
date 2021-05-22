@@ -12,7 +12,9 @@ This repository contains my snippet codes for my Python projects. It includes va
 
 ## [Data Structure](data_structure)    
 
-## [Probability](probability)    
+## [Probability](probability)
+
+## [Probabilistic Graphical Modeling](probabilistic_graphical_modeling)        
 
 ## [Signal System](signal_system)    
 
@@ -43,6 +45,7 @@ This repository contains my snippet codes for my Python projects. It includes va
 [Mutable and Immutable Types](Tutorials/mutable_vs_immutable.py)  
 [Networkx Graph](Tutorials/networkx_graph)  
 [Numpy Arrays](Tutorials/numpy_arrays.py)  
+[Numbers Representation In Memory](Tutorials/numbers_representation_in_memory.py)  
 [ProgressBar, tqdm](Tutorials/)  
 [Ploting](Tutorials/ploting.py)  
 [PEP8, Beautifier, Pylint, Pychecker](Tutorials/pep8_beautifier_pylint.py)  
