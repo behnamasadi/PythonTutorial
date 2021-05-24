@@ -5,7 +5,7 @@
 [Conditional Probability](conditional_probability.ipynb)  
 [Correlation Matrix](correlation_matrix.ipynb)  
 [Covariance](covariance.ipynb)  
-[Variance](variance.ipynb)
+[Variance](variance.ipynb)  
 [Density Estimation](density_estimation.ipynb)  
 [Expected Value](expected_value.ipynb)  
 [Important Extensions](important_extensions.ipynb)  
