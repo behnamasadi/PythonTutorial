@@ -16,4 +16,4 @@
 [Probability Space, Measure](probability_space_measure.ipynb)  
 [P values](p_values.ipynb)  
 
-Refs: [1](https://www.probabilitycourse.com/), [2](https://stats.libretexts.org/), [3](https://online.stat.psu.edu/stat414/)
+Refs: [1](https://www.probabilitycourse.com/), [2](https://stats.libretexts.org/), [3](https://online.stat.psu.edu/stat414/), [3](https://www.randomservices.org/random/expect/)
