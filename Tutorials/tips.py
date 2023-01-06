@@ -14,6 +14,12 @@ print (x/y)
 print ('%f' % (1/10**8))
 print ( '{0:f}'.format(x/y))
 
+########################## suppress scientific notation in Numpy ##########################
+# Suppress Scientific Notation in Numpy When Creating Array From Nested List
+import numpy as np
+np.set_printoptions(suppress=True)
+
+
 ########################## suppress warnings ##########################
 import warnings
 warnings.filterwarnings('ignore')
@@ -257,4 +263,11 @@ print(list(itertools.chain.from_iterable(a)))
 #python3 -m http.server
 
 
+################################## Difference between zip(list) and zip(*list) ##################################
+# zip wants a bunch of arguments to zip together, The * in a function call "unpacks" a list (or other iterable), 
+# making each of its elements a separate argument. So without the *, you're doing zip( [[1,2,3],[4,5,6]] ).
+# With the *, you're doing zip([1,2,3], [4,5,6]).
+p = [[1,2,3],[4,5,6]]
+d=zip(*p)
+# [(1, 4), (2, 5), (3, 6)]
 
