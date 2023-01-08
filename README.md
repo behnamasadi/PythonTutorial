@@ -6,19 +6,19 @@ This repository contains my snippet codes for my Python projects. It includes va
 
 ## [GUI with Python QT5](PyQT5)  
 
-## [Machine Learning](Machine_Learning)
+## [Machine Learning](Machine_Learning/README.md)
 
 ## [Computer Vision](computer_vision)    
 
 ## [Data Structure](data_structure)    
 
-## [Probability](probability)
+## [Probability](probability/README.md)
 
 ## [Probabilistic Graphical Modeling](probabilistic_graphical_modeling)        
 
 ## [Signal System](signal_system)    
 
-## [Calcus, Linear Algebra](calcus_linear_algebra)    
+## [Calculus, Linear Algebra](calculus_linear_algebra/README.md)    
 
 
 ## Python Tutorials
