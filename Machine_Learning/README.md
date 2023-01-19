@@ -22,7 +22,6 @@
 - [Batch Normalization](nn/batch_normalization.ipynb)  
 - [Dropout Layers](nn/dropout_layers.ipynb)  
 - [Loss Functions](nn/loss_functions.ipynb)  
-- [Regularization](nn/regularization.ipynb)  
 - [Softmax](nn/softmax.ipynb)  
 - [Transformers](nn/transformers.ipynb)  
 - [Weight Initialization](nn/weight_initialization.ipynb)  
