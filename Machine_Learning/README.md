@@ -27,4 +27,7 @@
 - [Weight Initialization](nn/weight_initialization.ipynb)  
 
 [Optimization](optimization)  
-[Regularization](regularization)  
+[Regularization](regularization)
+[Ridge regression](ridge_regression)    
+
+
