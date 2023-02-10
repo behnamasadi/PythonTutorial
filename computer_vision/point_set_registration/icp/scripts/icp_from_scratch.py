@@ -10,7 +10,6 @@ print(sys.version)
 import warnings
 warnings.filterwarnings('ignore')
 
-#from  sklearn import *
 from sklearn.neighbors import KDTree
 
 def SVDTransformFinder(X,P):
@@ -94,7 +93,7 @@ if __name__ == "__main__":
     
     print ("Translation: ",T)
     
-    plt.plot(d[0], d[1],color='G')
+    plt.plot(d[0], d[1],color='green')
 
     plt.show()
     
