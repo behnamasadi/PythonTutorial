@@ -8,8 +8,6 @@ This repository contains my snippet codes for my Python projects. It includes va
 
 ## [Machine Learning](Machine_Learning/README.md)
 
-## [Computer Vision](computer_vision)    
-
 ## [Data Structure](data_structure)    
 
 ## [Probability](probability/README.md)
@@ -18,7 +16,7 @@ This repository contains my snippet codes for my Python projects. It includes va
 
 ## [Signal System](signal_system/README.md)    
 
-## [Calculus, Linear Algebra](calculus_linear_algebra/README.md)    
+## [Calculus](calculus/README.md)    
 
 
 ## Python Tutorials
