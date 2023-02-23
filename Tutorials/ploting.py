@@ -308,7 +308,7 @@ Z=np.sin(0.5*X**2-0.25*Y**2)*np.cos(2*x+1-np.exp(y))
 
 #Make a 3D plot
 fig = plt.figure()
-ax = fig.gca(projection='3d')
+ax = fig.add_subplot(projection='3d')
 ax.plot_surface(X, Y, Z,linewidth=0,cmap='hot')
 ax.set_xlabel('X axis')
 ax.set_ylabel('Y axis')
