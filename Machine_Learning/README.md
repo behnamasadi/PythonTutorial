@@ -29,5 +29,9 @@
 [Optimization](optimization)  
 [Regularization](regularization)
 [Ridge regression](ridge_regression)    
+[Deep Learning Tuning Playbook](https://github.com/google-research/tuning_playbook)
+
+
+
 
 
