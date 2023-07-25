@@ -3,9 +3,13 @@
 ### How to run:
 
 ```
-$jupyter notebook
+jupyter notebook
 ```
 
+To allow access to the notebook from outside:
+```
+jupyter notebook --ip 0.0.0.0 --port 10000
+```
 ### Headlines
 use single # for H1, ## H2 for H2 and ### for  H3
 
