@@ -1,6 +1,33 @@
-# Jupyter Notebook Tutorial
+# Jupyter Tutorial
 
-### How to run:
+## Installation
+
+JupyterLab:
+
+```
+pip install jupyterlab
+```
+
+
+Jupyter Notebook:
+
+```
+pip install notebook
+```
+
+
+```
+conda install -c anaconda jupyter
+```
+
+
+## How to run:
+
+```
+jupyter-lab
+```
+
+or
 
 ```
 jupyter notebook
@@ -11,13 +38,20 @@ To allow access to the notebook from outside:
 jupyter notebook --ip 0.0.0.0 --port 10000
 ```
 
+if you running jupyter on remote machine and you want to start browser :
+
+```
+jupyter notebook --ip 0.0.0.0 --port 10000 --no-browser --allow-root
+```
+
+
 solve the problem regrading recent update:
 ```
 pip install --upgrade jupyter
 pip install --upgrade ipywidgets
 ```
 
-### Headlines
+## Headlines
 use single # for H1, ## H2 for H2 and ### for  H3
 
 ## HTML
