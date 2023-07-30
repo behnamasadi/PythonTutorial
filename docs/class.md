@@ -1,4 +1,6 @@
-In Python, properties and setters are part of a mechanism to control the access and modification of class attributes. They allow you to define custom behavior when getting and setting attribute values. Properties are used to define a "getter" for an attribute, while setters are used to define a "setter" for an attribute. Let me explain each concept in more detail:
+### properties, setters and attribute
+
+properties and setters are part of a mechanism to control the access and modification of class attributes. They allow you to define custom behavior when getting and setting attribute values. Properties are used to define a "getter" for an attribute, while setters are used to define a "setter" for an attribute. Let me explain each concept in more detail:
 
 1. Class Attribute:
 A class attribute is a variable that belongs to the class.
@@ -19,6 +21,27 @@ print(MyClass.class_attribute)  # Output: 10
 obj1 = MyClass(20)
 print(obj1.instance_attribute)  # Output: 20
 ```
+
+
+How the class keep list of attributes
+```
+class Foo:
+    def __init__(self, id):
+        self.id = id
+
+
+manager = Foo(100)
+manager.__dict__['life'] = 49
+
+
+
+for item in manager.__dict__.items():
+    print(item)
+
+print(manager.life + len(manager.__dict__))    
+```
+
+
 
 2. Property:
 Properties allow you to define a custom method to get the value of an attribute. They are useful when you want to perform additional operations or computations before returning the attribute value.
@@ -78,6 +101,12 @@ In this example, `radius` is a property with both a getter and a setter. The set
 
 By using properties and setters, you can encapsulate the behavior of attribute access and modification, providing a cleaner and more robust interface to your classes.
 
+
+
+
+### decorators
+
+### 
 
 
 [code](../Tutorials/class)

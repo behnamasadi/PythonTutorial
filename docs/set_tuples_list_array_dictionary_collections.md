@@ -66,6 +66,23 @@ cartesian_product_A_B=[(a,b) for a in A for b in B ]
 print(cartesian_product_A_B) 
 ```
 
+
+find index of element in the list:
+```
+list1 = range(100, 110)  # statement 1
+print("index of element 105 is : ", list1.index(105))
+```
+
+This
+```
+list1 = [1, 2, 3]
+print(list1*3)
+```
+will give you this:
+```
+[1, 2, 3, 1, 2, 3, 1, 2, 3]
+```
+
 # Array 
 If all you're doing is creating arrays of simple data types and doing I/O, the array module will do just fine. If, on the other hand, you want to do any kind of numerical calculations,
 the array module doesn't provide any help with that. NumPy (and SciPy) give you a wide variety of operations:

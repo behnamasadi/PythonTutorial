@@ -112,7 +112,6 @@ However, remember that such changes to `sys.path` are temporary and only affect 
 
 
 
-Certainly! A Python package is a way of organizing related modules into a single directory hierarchy. In simpler terms, it's like a folder that contains multiple Python scripts and possibly other nested folders, with the purpose of organizing and grouping related functionalities.
 
 ## Anatomy of a Python Package:
 1. **Directory/Folder**: The main folder which contains all your Python scripts (or modules). This folder's name will be the name of your package.
@@ -216,8 +215,87 @@ However, remember that such changes to `sys.path` are temporary and only affect 
 
 
 
+# complete example
+
+```
+   space_package/
+   ├── __init__.py
+   ├── Calc.py
+   └── Planet.py
+```
 
 # creating setup.py
+
+
+To create a `setup.py` file for a Python package, you need to define the package's metadata, dependencies, and other relevant information. Below is a simple example of a `setup.py` file for a Python package:
+
+```python
+from setuptools import setup, find_packages
+
+# Package metadata
+NAME = 'your-package-name'
+VERSION = '1.0.0'
+DESCRIPTION = 'Description of your package'
+AUTHOR = 'Your Name'
+EMAIL = 'your.email@example.com'
+URL = 'https://github.com/yourusername/your-package-repo'
+LICENSE = 'MIT'  # Replace with the appropriate license if needed
+
+# Define the required packages and package directories
+PACKAGES = find_packages()
+
+# Define the dependencies of your package
+INSTALL_REQUIRES = [
+    # List your dependencies here, e.g.,
+    # 'numpy>=1.18.0',
+    # 'requests>=2.25.1',
+]
+
+# Additional classifiers that describe your project
+CLASSIFIERS = [
+    'License :: OSI Approved :: MIT License',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.6',
+    'Programming Language :: Python :: 3.7',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
+]
+
+# Setup function call
+setup(
+    name=NAME,
+    version=VERSION,
+    description=DESCRIPTION,
+    author=AUTHOR,
+    author_email=EMAIL,
+    url=URL,
+    license=LICENSE,
+    packages=PACKAGES,
+    install_requires=INSTALL_REQUIRES,
+    classifiers=CLASSIFIERS,
+)
+```
+
+Replace the placeholders (`your-package-name`, `Description of your package`, `Your Name`, `your.email@example.com`, etc.) with appropriate values for your package.
+
+In this example, we are using `setuptools` to handle package distribution and dependencies. To create a distributable package, navigate to the directory containing your `setup.py` file in the command line and run the following command:
+
+```
+python setup.py sdist
+```
+
+This will create a source distribution package in the `dist` directory. You can distribute this package to others, or if you want to upload it to the Python Package Index (PyPI), you can use the `twine` package:
+
+```
+pip install twine
+twine upload dist/*
+```
+
+Remember to ensure that your package's code is organized properly and contains an `__init__.py` file inside each subpackage so that `setuptools` can discover and include them correctly.
+
+Keep in mind that this is a basic setup.py file. Depending on your package's complexity and needs, you may need to include additional configurations like data files, entry points, etc.
+
+
 setup.py is a python file, which usually tells you that the module/package you are about to install. If you have your package tree like:
 ```
 pip install -U
@@ -273,6 +351,40 @@ setup(
     ]
 )
 ```
-a sample available [here](https://github.com/pytorch/vision/blob/master/setup.py) 
+
+# use a package without installation 
+
+You can use a Python package without installation by manually adding the package's source code or module files to your project's working directory or any directory included in the Python's module search path. This approach is useful for quick experimentation or when you don't want to perform a formal installation.
+
+Here are the steps to use a Python package without installation:
+
+1. Obtain the package source code: Download the package's source code or obtain it from a version control repository (e.g., GitHub) as a ZIP file.
+
+2. Extract the package: Extract the ZIP file to a directory on your computer.
+
+3. Add the package to the Python path: To use the package in your project, you need to add the package's directory to Python's module search path. This can be done using the `sys.path` variable. For example:
+
+```python
+import sys
+
+# Replace 'path/to/package' with the actual path to the package directory
+package_path = 'path/to/package'
+sys.path.append(package_path)
+```
+
+4. Import the package's modules: Now, you can import modules from the package as if it were installed. For example:
+
+```python
+# Assuming 'mymodule' is a module within the package
+import mymodule
+
+# Use functions, classes, or variables from 'mymodule'
+```
+
+5. Use the package: You can now use the package's functions, classes, or variables in your Python code.
+
+Please note that using a package without formal installation may not be suitable for production-level projects or when working with complex packages with external dependencies. Proper package installation using `pip` or `setuptools` is recommended for most scenarios.
+
+Additionally, be aware that updates to the package won't be automatically reflected in your project unless you manually update the package files in your project directory.
 
 [code](../Tutorials/modules_packages)

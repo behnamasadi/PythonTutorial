@@ -44,7 +44,7 @@ This repository contains my snippet codes for my Python projects. It includes va
 [Inheritence](Tutorials/class/inheritence.py)  
 [Json](Tutorials/json_code.py)  
 [Lambda](Tutorials/lambda.py)  
-[Logging](Tutorials/logging_code.py)  
+[Logging](docs/logging_code.md)  
 [Mutable and Immutable Types](Tutorials/mutable_vs_immutable.py)  
 [Networkx Graph](Tutorials/networkx_graph)  
 [Numpy Arrays](Tutorials/numpy_arrays.py)  
@@ -64,7 +64,7 @@ This repository contains my snippet codes for my Python projects. It includes va
 [XML](Tutorials/xml_parsing.py)    
 [Yield, Generators](Tutorials/yield_generators.py)  
 [Code Visualizer](http://pythontutor.com/visualize.html#mode=display)  
-
+[Tips and tricks](docs/tips.md)
 
 
 ## [Design Pattern](Tutorials/design_pattern)

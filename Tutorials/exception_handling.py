@@ -176,5 +176,16 @@ except AttributeError:
 
 
 
+#try:
+#     pass
+#     break
+# except Exception:
+
+#     pass
+# except ValueError:
+
+# #except : # cant get ctrl+c
+
+
 
 
