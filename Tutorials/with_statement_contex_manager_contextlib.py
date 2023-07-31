@@ -1,7 +1,3 @@
-# When you work wth files you need to open/ close them properly and use the exception handling
-# Refs:
-# https://www.geeksforgeeks.org/with-statement-in-python/
-# https://stackoverflow.com/questions/26342769/meaning-of-with-statement-without-as-keyword
 try:
     my_file=open('data/with_statement.txt','w')
     my_file.write('some text')
