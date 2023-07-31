@@ -13,4 +13,6 @@ data/*.log
 *.pyc*
 #*/*egg-info*/*.*
 *egg-info*
+*dist*
+*build*
 .ipynb_checkpoints
