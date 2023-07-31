@@ -8,8 +8,9 @@ data/*.log
 **/build/*
 **/*.so
 **/.ipynb_checkpoints
-main.py
 .pkl
 *.gz
-*.pyc
+*.pyc*
+#*/*egg-info*/*.*
+*egg-info*
 .ipynb_checkpoints

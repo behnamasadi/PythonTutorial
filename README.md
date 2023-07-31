@@ -52,7 +52,7 @@ This repository contains my snippet codes for my Python projects. It includes va
 [ProgressBar, tqdm](Tutorials/)  
 [Ploting](Tutorials/ploting.py)  
 [With Statement, Contex Manager, Contextlib](Tutorials/with_statement_contex_manager_contextlib.py)  
-[Regex](Tutorials/regex.py)
+[Regex](Tutorials/regex.py)  
 [String Formatting](docs/string_formatting.md)    
 [File, Directory,IO, Serialization](Tutorials/file_directory_io_serialization.py)  
 [Json](Tutorials/json_code.py)  
@@ -64,7 +64,7 @@ This repository contains my snippet codes for my Python projects. It includes va
 [PEP8, Beautifier, Pylint, Pychecker](Tutorials/pep8_beautifier_pylint.py)  
 [Cython Tutorial](Tutorials/cython_tutorial)  
 [Executable Script](Tutorials/executable_script.py)  
-[Tips and tricks](docs/tips.md)
+[Tips and tricks](docs/tips.md)  
 
 
 ## [Design Pattern](Tutorials/design_pattern)
