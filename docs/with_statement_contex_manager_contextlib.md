@@ -43,7 +43,7 @@ with TimerContextManager():
 
 When the code within the `with` block finishes running (in this case, a sleep for 2 seconds), the context manager will print out the time it took.
 
-### Using `contextlib`
+### Using contextlib
 
 Python also provides a module named `contextlib` that has utilities to create context managers without the need to create a class. The most commonly used utility is `contextmanager` as a decorator.
 

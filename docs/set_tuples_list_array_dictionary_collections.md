@@ -31,18 +31,18 @@ print ("list1[1:5]: ", list2[0:5])
 print ("list1 reverse(list1[::-1]): ", list2[::-1])
 print ("list2: ", list2)
 ```
-negative indexes:
+### Negative indexes
 ```
 print ("list2[-1]: ", list2[-1])
 ```
 
-List Comprehension
+###List Comprehension
 
 ```
 list=[ expr for val in collestion ]
 list=[ expr for val in collestion if <> and if <> ]
 ```
-example 1:
+**example 1:**
 
 ```
 movies=["The Shawshank Redemption" , "The Godfather", "The Godfather: Part II", "The Dark Knight" ,"Angry Men" ,"Pulp Fiction"]
@@ -50,7 +50,7 @@ movies_start_with_the=[title for title in movies if title.startswith("The")]
 print("movies start with 'the': ",movies_start_with_the)
 ```
 
-example 2:
+**example 2:**
 
 ```
 movies=[("The Shawshank Redemption",1994) , ("The Godfather",1972), ("The Godfather: Part II",1974), ("The Dark Knight",2008) ,("Angry Men",1957) ,("Pulp Fiction",1994)]
@@ -67,7 +67,7 @@ print(cartesian_product_A_B)
 ```
 
 
-find index of element in the list:
+### Find index of element in the list:
 ```
 list1 = range(100, 110)  # statement 1
 print("index of element 105 is : ", list1.index(105))
@@ -83,22 +83,8 @@ will give you this:
 [1, 2, 3, 1, 2, 3, 1, 2, 3]
 ```
 
-# Array 
-If all you're doing is creating arrays of simple data types and doing I/O, the array module will do just fine. If, on the other hand, you want to do any kind of numerical calculations,
-the array module doesn't provide any help with that. NumPy (and SciPy) give you a wide variety of operations:
 
-Refs: [1](https://docs.python.org/3/library/array.html)
-
-```
-import array
-
-#'b' ==> signed char, 'i' ==> signed int
-my_array = array.array('i',[1,2,3,4])#array('data type', data)
-del my_array[2]
-print (my_array)
-```
-
-append(), extend(), insert (i,x) , remove(), zip
+### append(), extend(), insert (i,x) , remove(), zip
 
 ```
 list1=[2,3,1]
@@ -140,20 +126,19 @@ print(my_dict["book"])
 ```
 
 
-use get() key instead of [] if you are not sure about the existence  of key 
 ```
 print( my_dict.get("jumbo") )
 print(my_dict.get("jumbo","key not found!"))
 ```
 
 
-dictionary from a lists
+### dictionary from a lists
 ```
 list1= (['a', 1, 'b', 2, 'c', 3]) 
 print( {list1[i]: list1[i+1]   for i in range( 0, len(list1), 2 )  } )
 ```
 
-dictionary from two lists
+### dictionary from two lists
 ```
 keys = ['a', 'b', 'c']
 values = [1, 2, 3]
@@ -161,7 +146,7 @@ print("dictionary from two lists:",{ key:value   for key,value in zip( keys,valu
 print("dictionary from two lists:", dict(zip(keys,values) ) )
 ```
 
-updating dictionaries
+### updating dictionaries
 ```
 dictionary1 = {'Google' : 1, 
                'Facebook' : 2, 
@@ -176,7 +161,7 @@ for key, values in dictionary1.items():
     print(key, values) 
 ```
 
-dictionary duplicate key:
+### dictionary duplicate key:
 ```
 dictionary1 = {'GFG' : 1, 
                'Google' : 2, 
@@ -198,18 +183,20 @@ for (key, values) in temp.items():
     print(key, values, end = " ") 
 
 ```
-print("\n############################### Set ###############################")
-#A set is a collection which is unordered and unindexed. In Python sets are written with curly brackets.
-#You cannot access items in a set by referring to an index, since sets are unordered the items has no index.
+# Set
+A set is a collection which is unordered and unindexed. In Python sets are written with curly brackets.
+You cannot access items in a set by referring to an index, since sets are unordered the items has no index.
 
-# When to use the other types:
-# - Use lists if you have a collection of data that does not need random access. Try to choose lists when you need a simple, iterable collection that is modified frequently.
-# - Use a set if you need uniqueness for the elements.
-# - Use tuples when your data cannot change.
-
+ When to use the other types:
+ - Use lists if you have a collection of data that does not need random access. Try to choose lists when you need a simple, iterable collection that is modified frequently.
+ - Use a set if you need uniqueness for the elements.
+ - Use tuples when your data cannot change.
+```
 fruit_set = {"apple", "banana", "cherry"}
 fruit_set.add("orange")
-#Add multiple items to a set, using the update() method:
+```
+### Add multiple items to a set, using the update() method:
+```
 fruit_set.update(["orange", "mango", "grapes"])
 fruit_set.discard("banana")# If the item to remove does not exist, remove() will raise an error.
 
@@ -222,13 +209,15 @@ print("banana" in fruit_set)
 drink_set={"water", "beer"}
 union_set = drink_set.union(fruit_set)
 print(union_set)
+```
+### difference
+operator `-`: gets items in the first set but not in the second.
 
-#difference: operator - gets items in the first set but not in the second.
+### intersection
+operator `&` gets items only in both.
 
-#intersection: operator & gets items only in both.
-
-#issubset()
-
+###issubset()
+```
 thisset = set(("apple", "banana", "cherry")) # note the double round-brackets
 
 
@@ -250,13 +239,15 @@ a = {x for x in 'abracadabra' if x not in 'abc'}
 
 print(a)
 
+```
+### `isinstance` How to check if it is a list, tuple, set, dictionary, etc
 
-print("######################### How to check if it is a list, tuple, set, dictionary, etc ###############################")
-
+```
 print("[] is list:" ,isinstance( [],list)) 
 print("() is tuple:" ,isinstance( (),tuple)) 
 
 print("type([])==type([1,2,3]) :" ,type([])==type([1,2,3]) ) 
+```
 
 # Packing and Unpacking 
 We use two operators * (for tuples) and ** (for dictionaries).

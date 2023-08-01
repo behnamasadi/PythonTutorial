@@ -42,11 +42,10 @@ This repository contains my snippet codes for my Python projects. It includes va
 [Raise Exception](Tutorials/raise_exception.py)  
 [Lambda](Tutorials/lambda.py)  
 [Logging](docs/logging_code.md)  
-[Mutable and Immutable Types](Tutorials/mutable_vs_immutable.py)  
+[Mutable and Immutable Types](docs/mutable_vs_immutable.md)  
 [Set, Tuples, List, Array, Dictionary](docs/set_tuples_list_array_dictionary_collections.md)  
-[Numpy Arrays](Tutorials/numpy_arrays.py)  
-[Vectorization Operation, Broadcasting, numpy.vectorize](Tutorials/vectorization.py)  
-[Pandas](Tutorials/pandas_snipets.py)  
+[Numpy Arrays](docs/numpy.md)  
+[Pandas](docs/pandas.md)  
 [Numbers Representation In Memory](Tutorials/numbers_representation_in_memory.py)  
 [Ellipsis, Three dots ... ](docs/ellipsis_three_dots.md)  
 [ProgressBar, tqdm](Tutorials/)  
@@ -64,7 +63,7 @@ This repository contains my snippet codes for my Python projects. It includes va
 [PEP8, Beautifier, Pylint, Pychecker](Tutorials/pep8_beautifier_pylint.py)  
 [Cython Tutorial](Tutorials/cython_tutorial)  
 [Executable Script](Tutorials/executable_script.py)  
-[Tips and tricks](docs/tips.md)  
+[Tips and Tricks](docs/tips.md)  
 
 
 ## [Design Pattern](Tutorials/design_pattern)
