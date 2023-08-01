@@ -23,7 +23,7 @@ This repository contains my snippet codes for my Python projects. It includes va
 ## Python Tutorials
 [Built-in Types and Functions](Tutorials/built-in_types_functions.py)  
 [Functions](Tutorials/functions.py)  
-[Yield, Generators](Tutorials/yield_generators.py)  
+[Yield](docs/yield.md)  
 [Packing and Unpacking Arguments, *args and **kwargs](docs/packing_unpacking_arguments_args_kwargs.md)    
 [Class](docs/class.md)  
 [Inheritence](Tutorials/class/inheritence.py)  
@@ -44,6 +44,7 @@ This repository contains my snippet codes for my Python projects. It includes va
 [Logging](docs/logging_code.md)  
 [Mutable and Immutable Types](docs/mutable_vs_immutable.md)  
 [Set, Tuples, List, Array, Dictionary](docs/set_tuples_list_array_dictionary_collections.md)  
+[Generators](docs/generators.md)  
 [Numpy Arrays](docs/numpy.md)  
 [Pandas](docs/pandas.md)  
 [Numbers Representation In Memory](Tutorials/numbers_representation_in_memory.py)  

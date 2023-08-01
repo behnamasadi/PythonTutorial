@@ -219,6 +219,3 @@ df.eval('C = A + B', inplace=True)
 ```
 
 The key takeaway is that Pandas provides numerous built-in functionalities that allow you to perform operations on entire columns or DataFrames at once. By leveraging these capabilities, you can make your code cleaner, more concise, and often much faster.
-
-
-[code](../Tutorials/pandas_snipets.py)  
