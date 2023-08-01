@@ -27,107 +27,198 @@ This will give:
 2  Charlie   35    Los Angeles
 ```
 
-or you can simply create:
+or you can simply create an empty DataFram:
 
 ```
 df = pd.DataFrame(columns=["Name", "Article", "Quantity"])
 ```
+
+### append columns to an empty DataFrame 
+```
+df['Name'] = ['Tv', 'PC', 'Desk']
+df['Article'] = [97, 600, 200]
+df['Quantity'] = [2200, 75, 100]
+```
+
+
+#### iterate rows
+```
+for index, row in df.iterrows():
+    print(index, row['Name'])
+```
+
+### append rows
+```
+df_new_row = pd.DataFrame(
+    {'Name': ['Fridge'], 'Article': [97], 'Quantity': [2200]})
+df = pd.concat([df, df_new_row])
+```
+
+
+### printing headers (columns names)
+```
+cols = df.columns.tolist()
+print("columns are: ", cols)
+print("head: ", df.head())
+```
+
 
 ### Basic Operations:
 
 You can do a variety of operations on DataFrames:
 
-1. **Viewing data:** `df.head()` (top rows) and `df.tail()` (bottom rows).
-2. **Selecting columns:** `df['Name']` or `df[['Name', 'Age']]`.
-3. **Filtering rows:** `df[df['Age'] > 30]`.
-4. **Merging/Joining data:** `pd.merge(df1, df2, on='key_column')`.
+
+### Selecting columns
+`df['Name']` or `df[['Name', 'Age']]`.
+
+### Filtering rows
+`df[df['Age'] > 30]`.
+
+### Merging/Joining data
+ `pd.merge(df1, df2, on='key_column')`.
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-import pandas as pd
-import numpy as np
-
-print("##################### create dataframe #####################")
-
-df = pd.DataFrame(columns=["Name", "Article", "Quantity"])
-
-print("##################### append columns to an empty DataFrame #####################")
-df['Name'] = ['Tv', 'PC', 'Desk']
-df['Article'] = [97, 600, 200]
-df['Quantity'] = [2200, 75, 100]
-print(df)
-
-
-print("##################### iterate rows #####################")
-for index, row in df.iterrows():
-    print(index, row['Name'])
-
-
-print("##################### append rows #####################")
-df_new_row = pd.DataFrame(
-    {'Name': ['Fridge'], 'Article': [97], 'Quantity': [2200]})
-df = pd.concat([df, df_new_row])
-
-
-print(df)
-
-
-print("##################### printing headers (columns names) #####################")
-cols = df.columns.tolist()
-print("columns are: ", cols)
-print("head: ", df.head())
-
-
-print("##################### accessing rows by index #####################")
+#### accessing rows by index
+```
 print("the value of column Name at row index 1:", df.loc[1, ['Name']])
-
-print("##################### updating rows #####################")
+```
+### updating rows
+```
 df.at[1, 'Name'] = 'new value'
 print("the value of column Name at row index 1 after update is:",
       df.loc[1, ['Name']])
-
-print("##################### updating rows in loop #####################")
-
+```
+### updating rows in loop
+```
 for index in df.index:
     df.loc[index, ['Name']] = "*" + df.loc[index, ['Name']] + "*"
+```
 
-print(df)
 
-print("##################### delete columns #####################")
+### delete columns
+```
 # or df.pop("temp") or del df["temp"]
 df.drop('Quantity', inplace=True, axis=1)
 print('removing the Quantity column')
 print(df)
+```
 
-
-print("##################### rename columns #####################")
+### rename columns
+```
 df.rename(columns={'Article': 'New-Article'}, inplace=True)
-print(df)
+```
 
-print("##################### reset index column #####################")
-#df = df.reset_index(drop=True)
+### reset index column
+```
+df = df.reset_index(drop=True)
 df.set_index('Name', inplace=True)
 print(df)
-
-print("##################### remove index when writhing to csv #####################")
+```
+### remove index when writhing to csv
+```
 df.to_csv('data/tmp.csv', index=False)
-
-print("##################### read csv #####################")
+```
+### read csv 
+```
 df = pd.read_csv("data/tmp.csv", index_col=False)
 print(df)
+```
+
+
+### processing data without iterating
+
+In Pandas, it's often recommended to avoid explicit iteration (e.g., with `for` loops) over DataFrame rows or Series elements. Iterating over DataFrame rows using methods like `iterrows()` or `itertuples()` can be quite slow. Instead, one should leverage Pandas' built-in vectorized operations, which are optimized for performance.
+
+Here are some common ways to process data in Pandas without iterating:
+
+### 1. **Vectorized Operations**
+
+For arithmetic operations, you can apply them directly to the whole DataFrame or Series.
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})
+df['A'] = df['A'] * 2
+```
+
+### 2. **Using `apply()`**
+
+You can apply a function along the axis of a DataFrame.
+
+```python
+def some_function(x):
+    return x * x
+
+df['A'] = df['A'].apply(some_function)
+```
+
+### 3. **Using `map()` for Series**
+
+The `map()` function is used to map each value in a Series to some other value.
+
+```python
+s = pd.Series(['cat', 'dog', 'mouse'])
+s = s.map(str.upper)
+```
+
+### 4. **Boolean Indexing**
+
+You can filter rows based on some condition without iterating.
+
+```python
+df_filtered = df[df['A'] > 2]
+```
+
+### 5. **Using `where()`**
+
+The `where()` function is used to replace values in rows or columns based on some condition.
+
+```python
+df['A'] = df['A'].where(df['A'] > 2, 0)
+```
+
+### 6. **Using `assign()` for Creating New Columns**
+
+```python
+df = df.assign(C = df['A'] + df['B'])
+```
+
+### 7. **String Operations with `str` Accessor**
+
+You can apply string operations directly on a Series without iterating.
+
+```python
+df['text_column'] = df['text_column'].str.lower()
+```
+
+### 8. **Datetime Operations with `dt` Accessor**
+
+If you have a datetime column, you can extract components without iterating.
+
+```python
+df['year'] = df['date_column'].dt.year
+```
+
+### 9. **Aggregation Functions**
+
+Aggregation functions like `sum()`, `mean()`, `max()`, etc., are inherently vectorized.
+
+```python
+total = df['A'].sum()
+```
+
+### 10. **Using `eval()` for Computation**
+
+For large DataFrames, `eval()` can be faster than standard operations.
+
+```python
+df.eval('C = A + B', inplace=True)
+```
+
+The key takeaway is that Pandas provides numerous built-in functionalities that allow you to perform operations on entire columns or DataFrames at once. By leveraging these capabilities, you can make your code cleaner, more concise, and often much faster.
 
 
 [code](../Tutorials/pandas_snipets.py)  
