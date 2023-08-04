@@ -1,9 +1,8 @@
-.idea
 .settings
 .project
 .pydevproject
-Tutorials/temp
-data/*.log
+temp/*
+*/*.log
 **/__pycache__/*
 **/build/*
 **/*.so
@@ -11,7 +10,6 @@ data/*.log
 .pkl
 *.gz
 *.pyc*
-#*/*egg-info*/*.*
 *egg-info*
 *dist*
 *build*

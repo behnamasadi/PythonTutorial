@@ -1,24 +1,34 @@
-# https://docs.python.org/3/library/functions.html
-# https://docs.python.org/3/library/stdtypes.html
-# list()
-# tuple()
-# set()
-# dict()
-# all()
-# any()
-# abs()
-# round()
-# min() max()
-# sorted()
-# sum()
-# type()
-# staticmethod()
-# classmethod()
+# 
 
-# string: upper(), lower(), strip(), replace('old', 'new'), split('delimiter'),  join( )
-# Lists: append(arg), remove(arg), count(arg) clear()  sort()
-# Dictionaries: keys() values()
 
+
+- list()
+- tuple()
+- set()
+- dict()
+- all()
+- any()
+- abs()
+- round()
+- min() max()
+- sorted()
+- sum()
+- type()
+- staticmethod()
+- classmethod()
+
+## string
+```
+upper(), lower(), strip(), replace('old', 'new'), split('delimiter'),  join( )
+```
+## list
+```
+ append(arg), remove(arg), count(arg) clear()  sort()
+```
+## dictionaries: 
+```
+keys() values()
+```
 my_list = [2, 4, 1, 0, 8]
 print(sorted(my_list))
 
@@ -37,14 +47,15 @@ student_tuples = [
 sorted(student_tuples, key=lambda student: student[2])  # sort by age
 print(student_tuples)
 
-########################################### dir()###########################################
-# Without arguments, return the list of names in the current local scope. With an argument, attempt to return a list of valid attributes for that object.
+## dir()
+ Without arguments, return the list of names in the current local scope. With an argument, attempt to return a list of valid attributes for that object.
+```
 print(dir())
+print(dir(numpy))
+```
 
-# print(dir(numpy))
-
-
-########################################### iter() next() ###########################################
+## iter() next()
+```
 mytuple = ("apple", "banana", "cherry")
 myit = iter(mytuple)
 
@@ -77,8 +88,83 @@ print("myiter.__next__():",myiter.__next__())
 for x in myiter:
     print(x)
 
+```
+## vars() 
 
-########################################### vars() eval() ###########################################
+the built-in `vars()` function returns the `__dict__` attribute of an object. The `__dict__` attribute is a dictionary that contains the object's namespace (its variables, in simpler terms). If the object has no `__dict__` attribute, `vars()` raises a `TypeError`.
+
+When `vars()` is called without an argument, it behaves like `locals()` and returns a dictionary of the local namespace.
+
+Let's delve into a few examples:
+
+### 1. Using `vars()` without an argument:
+
+This will give us the local namespace. If used at the module level, it will give the global namespace.
+
+```python
+x = 10
+y = 20
+
+print(vars())
+```
+
+You will see something like this:
+
+```
+{
+    '__name__': '__main__',
+    '__doc__': None,
+    ... (other module level attributes) ...,
+    'x': 10,
+    'y': 20
+}
+```
+
+### 2. Using `vars()` with a custom object:
+
+```python
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+alice = Person('Alice', 30)
+
+print(vars(alice))
+```
+
+Output:
+
+```
+{
+    'name': 'Alice',
+    'age': 30
+}
+```
+
+This gives the dictionary representation of the attributes set in the `alice` object.
+
+### 3. Objects without `__dict__`:
+
+Some built-in objects don't have a `__dict__` attribute. If you call `vars()` on them, you'll get a `TypeError`.
+
+```python
+x = 10
+print(vars(x))  # Raises TypeError: vars() argument must have __dict__ attribute
+```
+
+### Note:
+
+It's essential to use `vars()` judiciously. For instance, modifying the dictionary returned by `vars()` for an object might have unintended side effects, as you would be directly altering the object's attributes.
+
+## eval()
+apply an string operation on the variable:
+
+```
+x = 1
+x=eval('x+1')
+```
+
 
 # Class attributes belong to the class itself they will be shared by all the instances. 
 class emp:
@@ -108,33 +194,82 @@ e2 = emp()
 print(e2.count)
 print(e2.count_)
 
-#################################### zip ####################################
-# https://www.geeksforgeeks.org/python-unzip-a-list-of-tuples/
+## zip
+
 x = [1, 2, 3]
 y = [4, 5, 6]
 print(list(zip(x, y)))
 
-# zip() in conjunction with the * operator can be used to unzip a list:
+### zip() in conjunction with the * operator can be used to unzip a list:
 x2, y2 = zip(*zip(x, y))
 print(list(x2))
 
-print('#################################### map ####################################')
+## map
 
-# map functions expect a function object and any number of iterables, such as list, dictionary, etc. It executes the function_object for each element in the sequence and returns a list of the elements modified by the function object.
+The built-in `map()` function in Python is used to apply a function to all the items in an input list (or any other iterable). It's a way to transform a series of data in a concise manner.
 
-x = [3, 5, 1, -2, 0]
+### Syntax:
 
-my_lambda = lambda a: True if a > 2 else False
+```python
+map(function, iterable, ...)
+```
 
-for i in map(my_lambda, x):
-    print(i)
+Here, `function` is the function to which the map applies for each item of the iterable.
 
-print(list(map(my_lambda, x)))
+### Example:
 
-list_a = [1, 2, 3]
-list_b = [10, 20, 30]
+Let's look at some examples to better understand the `map()` function.
 
-map(lambda x, y: x + y, list_a, list_b)
+**Example 1: Square all items in a list**
+
+```python
+def square(n):
+    return n * n
+
+numbers = [1, 2, 3, 4, 5]
+squared_numbers = map(square, numbers)
+
+print(list(squared_numbers))  # Output: [1, 4, 9, 16, 25]
+```
+
+Note that the result of `map()` is a map object, which is an iterator. To get the result as a list, we need to convert it using the `list()` function.
+
+**Example 2: Convert all strings in a list to uppercase**
+
+```python
+names = ["alice", "bob", "charlie"]
+uppercase_names = map(str.upper, names)
+
+print(list(uppercase_names))  # Output: ['ALICE', 'BOB', 'CHARLIE']
+```
+
+**Example 3: Using lambda functions with `map()`**
+
+Often, `map()` is used with lambda functions for quick, one-off transformations:
+
+```python
+numbers = [1, 2, 3, 4, 5]
+squared_numbers = map(lambda x: x*x, numbers)
+
+print(list(squared_numbers))  # Output: [1, 4, 9, 16, 25]
+```
+
+**Example 4: Using multiple iterables with `map()`**
+
+`map()` can also accept multiple iterables, and the function you provide should accept as many arguments as there are iterables. For instance:
+
+```python
+a = [1, 2, 3]
+b = [4, 5, 6]
+
+result = map(lambda x, y: x + y, a, b)
+
+print(list(result))  # Output: [5, 7, 9]
+```
+
+This example adds corresponding elements of two lists together.
+
+These are just a few examples to showcase the versatility and utility of the `map()` function in Python.
 
 print('#################################### all ####################################')
 
@@ -223,7 +358,7 @@ print(result)
 #https://www.geeksforgeeks.org/python-locals-function/
 
 
-#################################### string ####################################
+### string 
 
 a = ["Create" "a" "single" "string" "from" "all" "the" "elements"] 
 print(" ".join(a)) 
@@ -235,7 +370,7 @@ where row_id < 5"
 
 #startswith, endswith
 
-############################ id, type() and "is" ############################
+## id, type() and "is"
 
 #The built-in function id() returns the identity of an object as an integer. This integer usually corresponds to the object’s location in memory, although this is specific to the Python implementation and the platform being used. The is operator compares the identity of two objects.
 
@@ -273,4 +408,6 @@ print(m)
 print(n)
 print("id(m) == id(n)",id(m) == id(n))
 
+
+Refs [1](https://docs.python.org/3/library/functions.html), [2](https://docs.python.org/3/library/stdtypes.html)
 

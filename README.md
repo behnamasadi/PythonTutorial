@@ -21,7 +21,7 @@ This repository contains my snippet codes for my Python projects. It includes va
 ## [conda and pip](docs/conda_pip.md)
 
 ## Python Tutorials
-[Built-in Types and Functions](Tutorials/built-in_types_functions.py)  
+[Built-in Types and Functions](docs/built_in_types_functions.md)  
 [Functions](Tutorials/functions.py)  
 [Yield](docs/yield.md)  
 [Packing and Unpacking Arguments, *args and **kwargs](docs/packing_unpacking_arguments_args_kwargs.md)    
