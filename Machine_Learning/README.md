@@ -2,8 +2,6 @@
 [Bias Variance](bias_variance)    
 [Classification](classification)  
 [Clustering](clustering)  
-[Convex Optimization](convex_optimization)   
-[Curve Fitting](curve_fitting)  
 [Dimensionality Reduction, Manifold Learning](dimensionality_reduction_manifold_learning)  
 [Ensembling](ensembling)  
 [Feature Preprocessing](feature_preprocessing)  
@@ -25,10 +23,14 @@
 - [Softmax](nn/softmax.ipynb)  
 - [Transformers](nn/transformers.ipynb)  
 - [Weight Initialization](nn/weight_initialization.ipynb)  
-
 [Optimization](optimization)  
-[Regularization](regularization)
-[Ridge regression](ridge_regression)    
+- [Curve Fitting](curve_fitting)  
+- [Convex Optimization](convex_optimization)   
+- [Regularization](regularization)  
+- [Non-linear least squares](non_linear_least_squares/non_linear_least_squares.md)  
+  - [Levenberg–Marquardt algorithm](non_linear_least_squares/levenberg_marquardt_algorithm.md)  
+  - [Gauss Newton](non_linear_least_squares/gauss_newton.md)    
+
 [Deep Learning Tuning Playbook](https://github.com/google-research/tuning_playbook)
 
 

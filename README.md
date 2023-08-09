@@ -34,7 +34,7 @@ This repository contains my snippet codes for my Python projects. It includes va
 [Polymorphism](Tutorials/class/polymorphism.py)  
 [Modules](docs/module.md)  
 [Packages](docs/packages.md)  
-[Command Line Arguments, Flags (argv)](Tutorials/argparse.md)  
+[Command Line Arguments, Flags (argv)](docs/argparse.md)  
 [Control Flow Structure](Tutorials/control-flow_structure.py)  
 [Date Time](Tutorials/date_time.py)  
 [Exception Handling, try, except](Tutorials/exception_handling.py)  
@@ -65,6 +65,7 @@ This repository contains my snippet codes for my Python projects. It includes va
 [Cython Tutorial](Tutorials/cython_tutorial)  
 [Executable Script](Tutorials/executable_script.py)  
 [Tips and Tricks](docs/tips.md)  
+[Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
 
 
 ## [Design Pattern](Tutorials/design_pattern)

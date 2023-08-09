@@ -449,3 +449,27 @@ for (key, values) in temp.items():
 
 **There is no operator ++ in Python**
 
+
+
+## Google style guide
+
+### importing
+
+```
+from package import module
+
+module.function()
+```
+
+### main
+
+```
+def main():
+    ...
+
+if __name__ == '__main__':
+    main()
+```
+
+
+Refs: [1](https://google.github.io/styleguide/pyguide.html)

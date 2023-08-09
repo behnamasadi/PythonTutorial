@@ -38,8 +38,59 @@ print(x_1, x_2)
 s_ = np.arange(0,8,0.1)
 r_=(x_1*s_)/(x_2+s_)
 
-print("r_",r_.shape)
-print("s_",s_.shape)
+
 plt.plot(s_,r_, color="red")    
 plt.scatter(s,rate)
 plt.show()
+
+
+
+from scipy.optimize import least_squares
+
+def func(params,x):
+    a,b,c,d=params
+    y=a*x**3+b*x**2+c*x+1+d
+    return y
+
+def residual_function(params,x0, y_observed):
+
+    y_predicted=func(params,x0)
+    
+    return y_predicted-y_observed
+    
+
+
+
+a=1.7
+b=-2.4
+c=-1.3
+d=1
+params=a,b,c,d
+
+x=np.linspace(-2,3,100)
+y_true=func(params,x)
+
+y_noisy=y_true+1.5 * np.random.randn(y_true.shape[0])
+
+
+a_initial_guess=1
+b_initial_guess=2
+c_initial_guess=0
+d_initial_guess=-1
+
+initial_guess=[a_initial_guess,b_initial_guess,c_initial_guess,d_initial_guess]
+
+# https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html
+result =least_squares(fun=residual_function, x0=initial_guess, args=(x, y_noisy),method='lm')
+
+
+a_estimated,b_estimated,c_estimated,d_estimated=result.x
+y_estimated=func(result.x,x)
+
+
+
+plt.plot(x,y_noisy)
+plt.plot(x,y_true)
+plt.plot(x,y_estimated)
+plt.show()
+

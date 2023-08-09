@@ -1,7 +1,19 @@
 # Gauss–Newton algorithm
 
 
+## Description
+
 <img src="https://latex.codecogs.com/svg.latex?%7B%5Cdisplaystyle%20%7B%5Cboldsymbol%20%7BX%20%7D%7D_%7B%28n&plus;1%29%7D%3D%7B%5Cboldsymbol%20%7BX%20%7D%7D_%7B%28n%29%7D-%5Cleft%28%5Cmathbf%20%7BJ_%7Br%7D%7D%20%5E%7B%5Cmathsf%20%7BT%7D%7D%5Cmathbf%20%7BJ_%7Br%7D%7D%20%5Cright%29%5E%7B-1%7D%5Cmathbf%20%7BJ_%7Br%7D%7D%20%5E%7B%5Cmathsf%20%7BT%7D%7D%5Cmathbf%20%7Br%7D%20%5Cleft%28%7B%5Cboldsymbol%20%7BX%20%7D%7D_%7B%28n%29%7D%5Cright%29%2C%7D" alt="{\displaystyle {\boldsymbol {X }}_{(n+1)}={\boldsymbol {X }}_{(n)}-\left(\mathbf {J_{r}} ^{\mathsf {T}}\mathbf {J_{r}} \right)^{-1}\mathbf {J_{r}} ^{\mathsf {T}}\mathbf {r} \left({\boldsymbol {X }}_{(n)}\right),}"/>
+
+
+## Notes
+
+The normal equations are n simultaneous linear equations in the unknown increments 
+Δ\Delta . They may be solved in one step, using Cholesky decomposition, or, better, the QR factorization of 
+
+
+{\displaystyle \mathbf {J_{r}} }. For large systems, an iterative method, such as the conjugate gradient method, may be more efficient. 
+
 
 ### Example
 
@@ -47,4 +59,11 @@ The Jacobian <img src="https://latex.codecogs.com/svg.latex?%5Cmathbf%7BJ_r%7D" 
 <br/>
 
 <img src="https://latex.codecogs.com/svg.latex?%5Cmathbf%7BJ_r%7D%3D%5Cbegin%7Bbmatrix%7D%20%7B%5Cfrac%20%7B%5Cpartial%20r_%7B1%7D%7D%7B%5Cpartial%20x_%7B1%7D%7D%7D%3D-%7B%5Cfrac%20%7Bs_%7B1%7D%7D%7Bx_%7B2%7D&plus;s_%7B1%7D%7D%7D%20%26%20%5Cquad%20%7B%5Cfrac%20%7B%5Cpartial%20r_%7B1%7D%7D%7B%5Cpartial%20x_%7B2%7D%7D%7D%3D%7B%5Cfrac%20%7Bx_%7B1%7D%5Ccdot%20s_%7B1%7D%7D%7B%5Cleft%28x_%7B2%7D&plus;s_%7B1%7D%5Cright%29%5E%7B2%7D%7D%7D%5C%5C%20%7B%5Cfrac%20%7B%5Cpartial%20r_%7B2%7D%7D%7B%5Cpartial%20x_%7B1%7D%7D%7D%3D-%7B%5Cfrac%20%7Bs_%7B2%7D%7D%7Bx_%7B2%7D&plus;s_%7B2%7D%7D%7D%20%26%20%5Cquad%20%7B%5Cfrac%20%7B%5Cpartial%20r_%7B2%7D%7D%7B%5Cpartial%20x_%7B2%7D%7D%7D%3D%7B%5Cfrac%20%7Bx_%7B1%7D%5Ccdot%20s_%7B2%7D%7D%7B%5Cleft%28x_%7B2%7D&plus;s_%7B2%7D%5Cright%29%5E%7B2%7D%7D%7D%5C%5C%20%26%20%5C%5C%20%26%20%5C%5C%20%7B%5Cfrac%20%7B%5Cpartial%20r_%7B7%7D%7D%7B%5Cpartial%20x_%7B1%7D%7D%7D%3D-%7B%5Cfrac%20%7Bs_%7B7%7D%7D%7Bx_%7B2%7D&plus;s_%7B7%7D%7D%7D%20%26%20%5Cquad%20%7B%5Cfrac%20%7B%5Cpartial%20r_%7B7%7D%7D%7B%5Cpartial%20x_%7B2%7D%7D%7D%3D%7B%5Cfrac%20%7Bx_%7B1%7D%5Ccdot%20s_%7B7%7D%7D%7B%5Cleft%28x_%7B2%7D&plus;s_%7B7%7D%5Cright%29%5E%7B2%7D%7D%7D%5C%5C%20%5Cend%7Bbmatrix%7D" alt=" \mathbf{J_r}=\begin{bmatrix} {\frac {\partial r_{1}}{\partial x_{1}}}=-{\frac {s_{1}}{x_{2}+s_{1}}} &  \quad {\frac {\partial r_{1}}{\partial x_{2}}}={\frac {x_{1}\cdot s_{1}}{\left(x_{2}+s_{1}\right)^{2}}}\\ {\frac {\partial r_{2}}{\partial x_{1}}}=-{\frac {s_{2}}{x_{2}+s_{2}}} &  \quad {\frac {\partial r_{2}}{\partial x_{2}}}={\frac {x_{1}\cdot s_{2}}{\left(x_{2}+s_{2}\right)^{2}}}\\ " />
+
+## Improved versions
+
+## Wolfe conditions
+
+## Goldstein conditions
+
 
