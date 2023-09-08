@@ -1,24 +1,27 @@
 # Python Snippet Codes
 This repository contains my snippet codes for my Python projects. It includes varuois examples for:
 
+[Machine Learning](Machine_Learning/README.md)
 
-## [Jupyter Notebook/ Sympy](Jupyter_Tutorial)  
+[Data Structure](data_structure)    
 
-## [GUI with Python QT5](PyQT5)  
+[Probability](probability/README.md)
 
-## [Machine Learning](Machine_Learning/README.md)
+[Probabilistic Graphical Modeling](probabilistic_graphical_modeling/README.md)
+- [Probabilistic Graphical Models](probabilistic_graphical_modeling/probabilistic_graphical_models.ipynb)  
+- [Bayesian Inference](probabilistic_graphical_modeling/bayesian_inference.ipynb)  
+- [Bayesian Network](probabilistic_graphical_modeling/bayesian_network.ipynb)  
+- [Belief Propagation](probabilistic_graphical_modeling/belief_propagation.ipynb)  
 
-## [Data Structure](data_structure)    
+[Signal System](signal_system/README.md)    
 
-## [Probability](probability/README.md)
+[Calculus](calculus/README.md)    
 
-## [Probabilistic Graphical Modeling](probabilistic_graphical_modeling)        
+[Jupyter Notebook/ Sympy](Jupyter_Tutorial)  
 
-## [Signal System](signal_system/README.md)    
+[conda and pip](docs/conda_pip.md)  
 
-## [Calculus](calculus/README.md)    
-
-## [conda and pip](docs/conda_pip.md)
+[GUI with Python QT5](PyQT5)  
 
 ## Python Tutorials
 [Built-in Types and Functions](docs/built_in_types_functions.md)  
