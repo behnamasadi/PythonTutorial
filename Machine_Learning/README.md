@@ -9,6 +9,8 @@
 [Generative And Discriminative Algorithm](generative_and_discriminative_algorithm)  
 [Hidden Markov Model](hidden_markov_model)  
 [Hyperparameter](hyperparameter)  
+[Cohen's Kappa coefficient](kappa_coefficient/index.ipynb)  
+[Entropy](entropy/index.ipynb)  
 [Learning Process Steps Strategy](learning_process_steps_strategy)  
 [Metrics And Scoring For Model Evaluation, Learning Curves](metrics_and_scoring_for_model_evaluation/index.ipynb)  
 [Model Selection](model_selection)  
