@@ -12,6 +12,8 @@ This repository contains my snippet codes for my Python projects. It includes va
 - [Bayesian Inference](probabilistic_graphical_modeling/bayesian_inference.ipynb)  
 - [Bayesian Network](probabilistic_graphical_modeling/bayesian_network.ipynb)  
 - [Belief Propagation](probabilistic_graphical_modeling/belief_propagation.ipynb)  
+- [High-Dimensional Probability](https://www.math.uci.edu/~rvershyn/teaching/hdp/hdp.html)
+- [A visual introduction to Gaussian Belief Propagation](https://gaussianbp.github.io/)
 
 [Signal System](signal_system/README.md)    
 
@@ -69,7 +71,7 @@ This repository contains my snippet codes for my Python projects. It includes va
 [Executable Script](Tutorials/executable_script.py)  
 [Tips and Tricks](docs/tips.md)  
 [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
-
+[Webhook](docs/webhook.md)
 
 ## [Design Pattern](Tutorials/design_pattern)
 [Behavioral](Tutorials/design_pattern/Behavioral)  

@@ -42,10 +42,32 @@ except TypeError as e:
 
 Here, we tried to change the first letter of the string from 'h' to 'H'. However, strings are immutable in Python, so this operation raises a `TypeError`.
 
-### Why does this distinction matter?
 
-1. **Performance**: Some operations are more efficient on immutable objects. For instance, because strings are immutable, Python can optimize memory use and performance for string operations.
- 
-2. **Safety**: Immutable objects are inherently safe from unintended side effects. If you pass an immutable object to a function, you can be sure it won't be changed within that function, which can help prevent bugs.
+### Integers (int)
 
-3. **Dictionary Keys**: Only immutable objects can be used as dictionary keys. This is because a mutable object might change its value, making it hard or impossible to find later in the dictionary.
+When you perform operations on an integer in Python, a new integer object is created. Let's see this in action with an example:
+
+```python
+a = 3
+print(id(a))  # id() function returns the unique identifier of an object
+
+a += 2
+print(id(a))  # The id is different, meaning a new object has been created
+```
+
+In this example, `a` initially points to an integer object with the value `3`. When we add `2` to `a`, instead of changing the value of the existing object, Python creates a new integer object with the value `5` and updates `a` to reference this new object.
+
+### Floating-Point Numbers (float)
+
+Floating-point numbers (`float`) in Python work similarly to integers in terms of immutability. When a floating-point number is changed, a new object is created.
+
+```python
+b = 2.5
+print(id(b))
+
+b *= 2
+print(id(b))  # Different id, hence a new float object
+```
+
+In this example, `b` initially references a `float` object with the value `2.5`. After multiplying `b` by `2`, Python creates a new `float` object with the value `5.0` and `b` is updated to reference this new object.
+
