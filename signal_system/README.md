@@ -19,5 +19,5 @@
 [Dilated Convolutions](cross_correlation_convolution.ipynb#Dilated-Convolutions)  
 [Fourier series](cross_correlation_convolution.ipynb#Fourier-series)  
 [Wavelets](cross_correlation_convolution.ipynb#Wavelets)  
-[Signal Smoothing](signal_smoothing.ipynb)  
+[Signal Smoothing/ Noise removal reduction](signal_smoothing_noise_removal_reduction.ipynb)  
 
