@@ -1,12 +1,19 @@
 # Python Snippet Codes
+
 This repository contains my snippet codes for my Python projects. It includes varuois examples for:
 
+Dependencies:
+```
+conda install scipy
+conda install numpy
+conda install matplotlib
+pip3 install jupyter
+```
+
+
 [Machine Learning](Machine_Learning/README.md)
-
 [Data Structure](data_structure)    
-
 [Probability](probability/README.md)
-
 [Probabilistic Graphical Modeling](probabilistic_graphical_modeling/README.md)
 - [Probabilistic Graphical Models](probabilistic_graphical_modeling/probabilistic_graphical_models.ipynb)  
 - [Bayesian Inference](probabilistic_graphical_modeling/bayesian_inference.ipynb)  
@@ -16,13 +23,9 @@ This repository contains my snippet codes for my Python projects. It includes va
 - [A visual introduction to Gaussian Belief Propagation](https://gaussianbp.github.io/)
 
 [Signal System](signal_system/README.md)    
-
 [Calculus](calculus/README.md)    
-
 [Jupyter Notebook/ Sympy](Jupyter_Tutorial)  
-
 [conda and pip](docs/conda_pip.md)  
-
 [GUI with Python QT5](PyQT5)  
 
 ## Python Tutorials
