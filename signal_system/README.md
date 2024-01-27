@@ -18,6 +18,6 @@
 [1x1 Convolution (Network-in-Network)](cross_correlation_convolution.ipynb#1x1-Convolution-(Network-in-Network))  
 [Dilated Convolutions](cross_correlation_convolution.ipynb#Dilated-Convolutions)  
 [Fourier series](cross_correlation_convolution.ipynb#Fourier-series)  
-[Wavelets](cross_correlation_convolution.ipynb#Wavelets)  
+[Wavelets](wavelets.ipynb)  
 [Signal Smoothing/ Noise removal reduction](signal_smoothing_noise_removal_reduction.ipynb)  
 
