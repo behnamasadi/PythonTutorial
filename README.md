@@ -7,6 +7,7 @@ Dependencies:
 conda install scipy
 conda install numpy
 conda install matplotlib
+conda install pywavelets
 pip3 install jupyter
 ```
 
