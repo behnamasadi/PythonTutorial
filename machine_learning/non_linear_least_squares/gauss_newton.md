@@ -1,6 +1,84 @@
 # Gauss–Newton algorithm
 
 
+
+Taylor series of an arbitrary function:
+
+<br/>
+<br/>
+
+<img src="https://latex.codecogs.com/svg.image?f(x)\approx&space;f(a)&plus;(x-a)f'(a)" title="https://latex.codecogs.com/svg.image?f(x)\approx f(a)+(x-a)f'(a)" />
+
+<br/>
+<br/>
+
+this will approximate a function by a line, if we set it to zero, meaning the point that line became zero is an approximation of the where the function became zero, this point would be a start point for our next iteration.
+
+<br/>
+<br/>
+
+<img src="https://latex.codecogs.com/svg.image?x=a-\frac{f(a)}{f'(a)}" title="https://latex.codecogs.com/svg.image?x=a-\frac{f(a)}{f'(a)}" />
+<br/>
+<br/>
+
+
+
+<img src="https://latex.codecogs.com/svg.image?x_{n&plus;1}=x_n-\frac{f(x_n)}{f'(x_n)}" title="https://latex.codecogs.com/svg.image?x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}" />
+
+<br/>
+<br/>
+
+
+
+If we linearize the derivative of the function and set it zero we are looking for its extreme points
+
+<img src="https://latex.codecogs.com/svg.image?f'(x)\approx&space;f(a)'&plus;(x-a)f''(a)" title="https://latex.codecogs.com/svg.image?f'(x)\approx f'(a)+(x-a)f''(a)" />
+
+
+<br/>
+<br/>
+<img src="https://latex.codecogs.com/svg.image?x=a-\frac{f'(a)}{f''(a)}" title="https://latex.codecogs.com/svg.image?x=a-\frac{f'(a)}{f''(a)}" />
+<br/>
+<br/>
+
+
+<img src="https://latex.codecogs.com/svg.image?x_{n&plus;1}=x_n-\frac{f'(x_n)}{f''(x_n)}" title="https://latex.codecogs.com/svg.image?x_{n+1}=x_n-\frac{f'(x_n)}{f''(x_n)}" />
+
+<br/>
+<br/>
+for multi dimensional data: 
+<br/>
+<br/>
+
+<img src="https://latex.codecogs.com/svg.image?X_{n&plus;1}=X_n-(\nabla^2f(X_n))^{-1}\nabla&space;f(X_n)" title="https://latex.codecogs.com/svg.image?X_{n+1}=X_n-(\nabla^2f(X_n))^{-1}\nabla f(X_n)" />
+
+
+
+
+<br/>
+<br/>
+
+<img src="https://latex.codecogs.com/svg.image?\nabla&space;f(X_n)=J(X_n)^Tr(X_n)" title="https://latex.codecogs.com/svg.image?\nabla f(X_n)=J(X_n)^Tr(X_n)" />
+<br/>
+<br/>
+
+
+<img src="https://latex.codecogs.com/svg.image?\nabla&space;^2f(X_n)=J(X_n)^TJ(X_n)" title="https://latex.codecogs.com/svg.image?\nabla ^2f(X_n)=J(X_n)^TJ(X_n)" />
+<br/>
+<br/>
+
+<img src="https://latex.codecogs.com/svg.image?J^TJ" title="https://latex.codecogs.com/svg.image?J^TJ" />is a reasonable the approximation of Hessian <img src="https://latex.codecogs.com/svg.image?H" title="https://latex.codecogs.com/svg.image?H" />
+
+<br/>
+<br/>
+
+
+<img src="https://latex.codecogs.com/svg.image?X_{n&plus;1}=X_n-&space;(J(X_n)^TJ(X_n))^{-1}J(X_n)^Tr(X_n)" title="https://latex.codecogs.com/svg.image?X_{n+1}=X_n- (J(X_n)^TJ(X_n))^{-1}J(X_n)^Tr(X_n)" />
+
+Refs: [1](https://math.stackexchange.com/questions/2349026/why-is-the-approximation-of-hessian-jtj-reasonable)
+
+
+
 ## Description
 
 <img src="https://latex.codecogs.com/svg.latex?%7B%5Cdisplaystyle%20%7B%5Cboldsymbol%20%7BX%20%7D%7D_%7B%28n&plus;1%29%7D%3D%7B%5Cboldsymbol%20%7BX%20%7D%7D_%7B%28n%29%7D-%5Cleft%28%5Cmathbf%20%7BJ_%7Br%7D%7D%20%5E%7B%5Cmathsf%20%7BT%7D%7D%5Cmathbf%20%7BJ_%7Br%7D%7D%20%5Cright%29%5E%7B-1%7D%5Cmathbf%20%7BJ_%7Br%7D%7D%20%5E%7B%5Cmathsf%20%7BT%7D%7D%5Cmathbf%20%7Br%7D%20%5Cleft%28%7B%5Cboldsymbol%20%7BX%20%7D%7D_%7B%28n%29%7D%5Cright%29%2C%7D" alt="{\displaystyle {\boldsymbol {X }}_{(n+1)}={\boldsymbol {X }}_{(n)}-\left(\mathbf {J_{r}} ^{\mathsf {T}}\mathbf {J_{r}} \right)^{-1}\mathbf {J_{r}} ^{\mathsf {T}}\mathbf {r} \left({\boldsymbol {X }}_{(n)}\right),}"/>
