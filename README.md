@@ -1,6 +1,6 @@
 # Python Snippet Codes
 
-This repository contains my snippet codes for my Python projects. It includes varuois examples for:
+This repository contains my snippet codes for my Python projects. It includes various examples for:
 
 Dependencies:
 ```
@@ -12,7 +12,7 @@ pip3 install jupyter
 ```
 
 
-[Machine Learning](machine_learning/README.md)  
+# [Machine Learning](machine_learning/)  
 - [Bias Variance](machine_learning/bias_variance/index.ipynb)    
 - [Classification](machine_learning/classification)  
 - [Clustering](machine_learning/clustering)  
@@ -20,26 +20,34 @@ pip3 install jupyter
 - [Ensembling](machine_learning/ensembling)  
 - [Feature Preprocessing](machine_learning/feature_preprocessing)  
 - [Feature Selection And Analysis](machine_learning/feature_selection_and_analysis)  
-- [Generative And Discriminative Algorithm](machine_learning/generative_and_discriminative_algorithm)  
+- [Generative and Discriminative Algorithm](machine_learning/generative_and_discriminative_algorithm)  
 - [Hidden Markov Model](machine_learning/hidden_markov_model)  
 - [Hyperparameter](machine_learning/hyperparameter)  
 - [Cohen's Kappa coefficient](machine_learning/kappa_coefficient/index.ipynb)  
 - [Entropy](machine_learning/entropy/index.ipynb)   
 - [Learning Process Steps Strategy](machine_learning/learning_process_steps_strategy)  
-- [Metrics And Scoring For Model Evaluation, Learning Curves](machine_learning/metrics_and_scoring_for_model_evaluation/index.ipynb)  
+- [Metrics and Scoring For Model Evaluation, Learning Curves](machine_learning/metrics_and_scoring_for_model_evaluation/index.ipynb)  
 - [Model Selection](machine_learning/model_selection)  
 - [Multi Task Learning](machine_learning/multi_task_learning)    
 - [Neural Network](machine_learning/nn)  
 - [Optimization](machine_learning/optimization)  
+- [Optimization and Null Space](machine_learning/null_space/index.ipynb) 
+- [Constrained Optimization](machine_learning/null_space/index.ipynb#Constrained-Optimization) 
 - [Curve Fitting](machine_learning/curve_fitting)  
 - [Convex Optimization](machine_learning/convex_optimization)   
 - [Regularization](machine_learning/regularization)  
 - [Non-linear least squares](machine_learning/non_linear_least_squares/non_linear_least_squares.md)  
 - [Levenberg–Marquardt algorithm](machine_learning/non_linear_least_squares/levenberg_marquardt_algorithm.md)  
 - [Gauss Newton](machine_learning/non_linear_least_squares/gauss_newton.md)    
+- [Hypothesis Testing](machine_learning/hypothesis_testing)
+- [Kernel Function, SVM](machine_learning/kernel_function/index.ipynb)
+- [Linear Equation](machine_learning/linear_equation)
+- [Neural Network Optimizers](machine_learning/optimization/optimizers.ipynb)
+- [Ridge Regression](machine_learning/ridge_regression)
+- [Gaussian Processes](machine_learning/gaussian_processes/index.ipynb)
+- [Radial Basis Function](machine_learning/radial_basis_function/index.ipynb)
 
-
-[Probability](probability/README.md)  
+# [Probability](probability/)  
 - [Expected Value](probability/expected_value.ipynb)  
 - [PMF, PDF, CDF, Marginal Probability, Joint Probability](probability/cdf_pmf_pdf_joint_marginal.ipynb)  
 - [Chain Rule](probability/chain_rule.ipynb)  
@@ -52,12 +60,19 @@ pip3 install jupyter
 - [Important Extensions](probability/important_extensions.ipynb)  
 - [KL Divergence](probability/KL_divergence.ipynb)  
 - [Likelihood](probability/likelihood.ipynb)  
-- [Maximum Likelihood Estimation](probability/maximum_likelihood_estimation.ipynb)  
+  - [Log Likelihood](probability/likelihood.ipynb#Log-Likelihood)  
+  - [Likelihood ratio](probability/likelihood.ipynb#Likelihood-ratio)  
+  - [Log odds](probability/likelihood.ipynb#Log-odds)  
+  - [Odds ratio](probability/likelihood.ipynb#Odds-ratio)  
+- [Maximum Likelihood Estimation](probability/maximum_likelihood_estimation/index.ipynb)  
+- [Maximum a Posteriori Estimation (MAP)](probability/maximum_a_posteriori_estimation_MAP/index.ipynb)  
+- [Minimum Mean Square Error (MMSE)](probability/minimum_mean_square_error_MMSE/index.ipynb)  
 - [Probability Distributions](probability/probability_distributions.ipynb)  
 - [Probability Space, Measure](probability/probability_space_measure.ipynb)  
 - [P values](probability/p_values.ipynb)  
 
-[Probabilistic Graphical Modeling](probabilistic_graphical_modeling/README.md)  
+# [Probabilistic Graphical Modeling](probabilistic_graphical_modeling/)  
+
 - [Probabilistic Graphical Models](probabilistic_graphical_modeling/probabilistic_graphical_models.ipynb)  
 - [Bayesian Inference](probabilistic_graphical_modeling/bayesian_inference.ipynb)  
 - [Bayesian Network](probabilistic_graphical_modeling/bayesian_network.ipynb)  
@@ -65,7 +80,7 @@ pip3 install jupyter
 - [High-Dimensional Probability](https://www.math.uci.edu/~rvershyn/teaching/hdp/hdp.html)  
 - [A visual introduction to Gaussian Belief Propagation](https://gaussianbp.github.io/)  
 
-[Signal System](signal_system/README.md)    
+# [Signal System](signal_system/)    
 
 - [convolution](signal_system/convolution.ipynb)  
 - [autocorrelation](signal_system/autocorrelation.ipynb)
@@ -80,7 +95,7 @@ pip3 install jupyter
 - [signal to noise ratio](signal_system/signal_to_noise_ratio.ipynb)
 - [spectral analysis](signal_system/spectral_analysis.ipynb)
 
-[Calculus](calculus/README.md)    
+# [Calculus](calculus/)    
 
 - [Derivatives](calculus/derivatives.ipynb)  
 - [Partial-derivative](calculus/derivatives.ipynb#Partial-derivative)
@@ -98,7 +113,7 @@ pip3 install jupyter
 [conda and pip](docs/conda_pip.md)  
 [GUI with Python QT5](PyQT5)  
 
-## Python Tutorials
+# Python Tutorials
 [Built-in Types and Functions](docs/built_in_types_functions.md)  
 [Functions](Tutorials/functions.py)  
 [Yield](docs/yield.md)  
