@@ -8,6 +8,7 @@ conda install scipy
 conda install numpy
 conda install matplotlib
 conda install pywavelets
+conda install scikit-image
 pip3 install jupyter
 ```
 
