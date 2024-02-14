@@ -47,7 +47,7 @@ pip3 install jupyter
 - [Ridge Regression](machine_learning/ridge_regression)  
 - [Gaussian Processes](machine_learning/gaussian_processes/index.ipynb)  
 - [Radial Basis Function](machine_learning/radial_basis_function/index.ipynb)  
-- [Vector Quantization](machine_learning/vector quantization)
+- [Vector Quantization](machine_learning/vector_quantization/index.ipynb)  
 
 
 # [Probability](probability/)  
@@ -71,6 +71,14 @@ pip3 install jupyter
 - [Maximum a Posteriori Estimation (MAP)](probability/maximum_a_posteriori_estimation_MAP/index.ipynb)  
 - [Minimum Mean Square Error (MMSE)](probability/minimum_mean_square_error_MMSE/index.ipynb)  
 - [Probability Distributions](probability/probability_distributions.ipynb)  
+  - [Multinomial Distribution](probability/probability_distributions.ipynb#Multinomial-Distribution)
+  - [Bernoulli Distribution](probability/probability_distributions.ipynb#Bernoulli-Distribution)
+  - [Binomial Distribution](probability/probability_distributions.ipynb#Binomial-Distribution)
+  - [Multivariate Normal (Gaussian) Distribution](probability/probability_distributions.ipynb#Multivariate-Normal-(Gaussian)-Distribution)
+  - [Moments Parameterization](probability/probability_distributions.ipynb#Moments-Parameterization)
+  - [Canonical Parameterization](probability/probability_distributions.ipynb#Canonical-Parameterization)
+
+
 - [Probability Space, Measure](probability/probability_space_measure.ipynb)  
 - [P values](probability/p_values.ipynb)  
 
@@ -82,6 +90,10 @@ pip3 install jupyter
 - [Belief Propagation](probabilistic_graphical_modeling/belief_propagation.ipynb)  
 - [High-Dimensional Probability](https://www.math.uci.edu/~rvershyn/teaching/hdp/hdp.html)  
 - [A visual introduction to Gaussian Belief Propagation](https://gaussianbp.github.io/)  
+- [Factor Graph](probabilistic_graphical_modeling/factor_graph.md)  
+  - [Message Passing Algorithm](probabilistic_graphical_modeling/factor_graph.ipynb#Message-Passing-Algorithm)  
+  - [Belief Propagation](probabilistic_graphical_modeling/factor_graph.ipynb#Belief-Propagation)  
+  - [Variable Elimination](probabilistic_graphical_modeling/factor_graph.ipynb#Variable-Elimination)  
 
 # [Signal System](signal_system/)    
 
