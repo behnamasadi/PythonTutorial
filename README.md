@@ -10,6 +10,7 @@ conda install matplotlib
 conda install pywavelets
 conda install scikit-image
 pip3 install jupyter
+conda install -c anaconda networkx
 ```
 
 
