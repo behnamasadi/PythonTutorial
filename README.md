@@ -4,7 +4,11 @@ This repository contains my snippet codes for my Python projects. It includes va
 
 Dependencies:
 ```
-conda install  scipy numpy matplotlib pywavelets scikit-image jupyterlab -c anaconda networkx
+conda create -n PythonTutorial
+conda activate PythonTutorial
+conda install  scipy numpy matplotlib pywavelets scikit-image
+conda install -c conda-forge
+conda install -c anaconda networkx
 ```
 
 
