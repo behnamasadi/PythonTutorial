@@ -6,7 +6,7 @@ Dependencies:
 ```
 conda create -n PythonTutorial
 conda activate PythonTutorial
-conda install  scipy numpy matplotlib pywavelets scikit-image
+conda install scipy numpy matplotlib pywavelets scikit-image anaconda::ipython anaconda::sympy
 conda install -c conda-forge
 conda install -c anaconda networkx
 ```
@@ -30,6 +30,16 @@ conda install -c anaconda networkx
 - [Model Selection](machine_learning/model_selection)  
 - [Multi Task Learning](machine_learning/multi_task_learning)    
 - [Neural Network](machine_learning/nn)  
+  - [Back Propagation](machine_learning/nn/backpropagation.ipynb)
+  - [Activation Function](machine_learning/nn/activation_function.ipynb)
+  - [Loss Functions](machine_learning/nn/loss_functions.ipynb)
+  - [Weight Initialization](machine_learning/nn/weight_initialization.ipynb)machine_learning/nn/batch_normalization.ipynb
+  - [Softmax](machine_learning/nn/softmax.ipynb)
+  - [Encoders](machine_learning/nn/encoders.ipynb)
+  - [Transformers](machine_learning/nn/transformers.ipynb)
+  - [Dropout Layers](machine_learning/nn/dropout_layers.ipynb)
+  - [3D Deep Learning](machine_learning/nn/3D_deep_learning.ipynb)
+  - [Neural Network Optimizers](machine_learning/optimization/optimizers.ipynb)  
 - [Optimization](machine_learning/optimization)  
 - [Optimization and Null Space](machine_learning/null_space/index.ipynb)  
 - [Constrained Optimization](machine_learning/null_space/index.ipynb#Constrained-Optimization)   
@@ -42,7 +52,6 @@ conda install -c anaconda networkx
 - [Hypothesis Testing](machine_learning/hypothesis_testing)  
 - [Kernel Function, SVM](machine_learning/kernel_function/index.ipynb)  
 - [Linear Equation](machine_learning/linear_equation)  
-- [Neural Network Optimizers](machine_learning/optimization/optimizers.ipynb)  
 - [Ridge Regression](machine_learning/ridge_regression)  
 - [Gaussian Processes](machine_learning/gaussian_processes/index.ipynb)  
 - [Radial Basis Function](machine_learning/radial_basis_function/index.ipynb)  
