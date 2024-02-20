@@ -33,7 +33,8 @@ conda install -c anaconda networkx
   - [Back Propagation](machine_learning/nn/backpropagation.ipynb)
   - [Activation Function](machine_learning/nn/activation_function.ipynb)
   - [Loss Functions](machine_learning/nn/loss_functions.ipynb)
-  - [Weight Initialization](machine_learning/nn/weight_initialization.ipynb)machine_learning/nn/batch_normalization.ipynb
+  - [Weight Initialization](machine_learning/nn/weight_initialization.ipynb)
+  - [Batch Normalization](machine_learning/nn/batch_normalization.ipynb)  
   - [Softmax](machine_learning/nn/softmax.ipynb)
   - [Encoders](machine_learning/nn/encoders.ipynb)
   - [Transformers](machine_learning/nn/transformers.ipynb)
