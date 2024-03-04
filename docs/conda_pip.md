@@ -4,10 +4,17 @@
 - **Conda** is the system that handles package management and environment management.
 - **Anaconda** is a distribution – a pre-packaged collection of tools and libraries. One of the tools included in this distribution is Conda.
 
-## 1.2. adding conda to path
+## 1.2. adding conda to the path
+
+On Linux
 
 `export PATH=/home/$USER/anaconda3/bin/:$PATH`
 
+On Windows: 
+
+1. From the Start Menu open the Anaconda Prompt.
+2. `where python`
+3. The default path should be `C:\Users\<user-name>\Anaconda3\python.exe` and `C:\Users\<user-name>\Anaconda3\envs\my-env\python.exe`
 
 ## 1.3. conda activating the base environment
 Enable/ disable auto activate base: you can check this using the following command: 
