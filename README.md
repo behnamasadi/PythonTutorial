@@ -58,7 +58,8 @@ conda install -c anaconda networkx
 - [Radial Basis Function](machine_learning/radial_basis_function/index.ipynb)  
 - [Vector Quantization](machine_learning/vector_quantization/index.ipynb)  
 
-
+# [Lie Group and Lie Algebra](#)
+- [Lie Group and Lie Algebra](lie_group_lie_algebra/index.ipynb)   
 # [Probability](probability/)  
 - [Expected Value](probability/expected_value.ipynb)  
 - [PMF, PDF, CDF, Marginal Probability, Joint Probability](probability/cdf_pmf_pdf_joint_marginal.ipynb)  
