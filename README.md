@@ -41,7 +41,7 @@ conda install -c anaconda networkx
   - [Dropout Layers](machine_learning/nn/dropout_layers.ipynb)
   - [3D Deep Learning](machine_learning/nn/3D_deep_learning.ipynb)
   - [Neural Network Optimizers](machine_learning/optimization/optimizers.ipynb)  
-- [Optimization](machine_learning/optimization)  
+- [Neural Network Optimizers](machine_learning/neural_network_optimizers/optimizers.ipynb)  
 - [Optimization and Null Space](machine_learning/null_space/index.ipynb)  
 - [Constrained Optimization](machine_learning/null_space/index.ipynb#Constrained-Optimization)   
 - [Curve Fitting](machine_learning/curve_fitting)  
