@@ -111,7 +111,7 @@ conda install -c anaconda networkx
 - [auto correlation](signal_system/autocorrelation.ipynb)
 - [wavelets](signal_system/wavelets.ipynb)  
 - [continuous wavelet transform CWT, discrete wavelet transform DWT](signal_system/continuous_wavelet_transform_discrete_wavelet_transform.ipynb)
-- [white noise Gaussian_noise](signal_system/white_noise_gaussian_noise.ipynb)
+- [white noise Gaussian noise](signal_system/white_noise_gaussian_noise.ipynb)
 - [random walk, wiener process, brownian noise](signal_system/random_walk_wiener_process_brownian_noise.ipynb)
 - [signal smoothing noise removal reduction](signal_system/signal_smoothing_noise_removal_reduction.ipynb)
 - [continuous time state equations](signal_system/continuous_time_state_equations.ipynb)
