@@ -50,7 +50,10 @@ conda install -c anaconda networkx
 - [Non-linear least squares](machine_learning/non_linear_least_squares/non_linear_least_squares.md)  
 - [Levenberg–Marquardt algorithm](machine_learning/non_linear_least_squares/levenberg_marquardt_algorithm.md)  
 - [Gauss Newton](machine_learning/non_linear_least_squares/gauss_newton.md)    
-- [Hypothesis Testing](machine_learning/hypothesis_testing)  
+- [Hypothesis Testing](machine_learning/hypothesis_testing/index.ipynb#Hypothesis-Testing)  
+  - [Null Hypothesis and Alternative Hypothesis](machine_learning/hypothesis_testing/index.ipynb#Null-Hypothesis)  
+  - [P Values](machine_learning/hypothesis_testing/index.ipynb#P-values)  
+  - [Test Statistic (t-test)](machine_learning/hypothesis_testing/index.ipynb#Test-Statistic)
 - [Kernel Function, SVM](machine_learning/kernel_function/index.ipynb)  
 - [Linear Equation](machine_learning/linear_equation)  
 - [Ridge Regression](machine_learning/ridge_regression)  
@@ -88,7 +91,7 @@ conda install -c anaconda networkx
   - [Moments Parameterization](probability/probability_distributions.ipynb#Moments-Parameterization)  
   - [Canonical Parameterization](probability/probability_distributions.ipynb#Canonical-Parameterization)  
 - [Probability Space, Measure](probability/probability_space_measure.ipynb)  
-- [P values](probability/p_values.ipynb)  
+- [Confidence Interval](machine_learning/confidence_interval/index.ipynb)  
 
 # [Probabilistic Graphical Modeling](probabilistic_graphical_modeling/)  
 
