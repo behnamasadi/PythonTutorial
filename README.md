@@ -36,7 +36,7 @@ conda install -c anaconda networkx
   - [Weight Initialization](machine_learning/nn/weight_initialization.ipynb)
   - [Batch Normalization](machine_learning/nn/batch_normalization.ipynb)  
   - [Softmax](machine_learning/nn/softmax.ipynb)
-  - [Encoders](machine_learning/nn/encoders.ipynb)
+  - [Encoders, Decoders, Variational Autoencoders](machine_learning/nn/encoders.ipynb)
   - [Transformers](machine_learning/nn/transformers.ipynb)
   - [Dropout Layers](machine_learning/nn/dropout_layers.ipynb)
   - [3D Deep Learning](machine_learning/nn/3D_deep_learning.ipynb)
