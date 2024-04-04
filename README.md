@@ -80,7 +80,7 @@ conda install -c anaconda networkx
   - [Likelihood ratio](probability/likelihood.ipynb#Likelihood-ratio)  
   - [Log odds](probability/likelihood.ipynb#Log-odds)  
   - [Odds ratio](probability/likelihood.ipynb#Odds-ratio)  
-- [Maximum Likelihood Estimation](probability/maximum_likelihood_estimation/index.ipynb)  
+- [Maximum Likelihood Estimation (MLE)](probability/maximum_likelihood_estimation/index.ipynb)  
 - [Maximum a Posteriori Estimation (MAP)](probability/maximum_a_posteriori_estimation_MAP/index.ipynb)  
 - [Minimum Mean Square Error (MMSE)](probability/minimum_mean_square_error_MMSE/index.ipynb)  
 - [Probability Distributions](probability/probability_distributions.ipynb)  
@@ -97,7 +97,7 @@ conda install -c anaconda networkx
 
 - [Probabilistic Graphical Models](probabilistic_graphical_modeling/probabilistic_graphical_models.ipynb)  
 - [Bayesian Inference](probabilistic_graphical_modeling/bayesian_inference.ipynb)  
-- [Bayesian Network](probabilistic_graphical_modeling/bayesian_network.ipynb)  
+- [Bayesian Network (Bayes Network, Belief Network, or Decision Network)](probabilistic_graphical_modeling/bayesian_network.ipynb)  
 - [High Dimensional Probability](https://www.math.uci.edu/~rvershyn/teaching/hdp/hdp.html)  
 - [Factor Graph](probabilistic_graphical_modeling/factor_graph.md)  
   - [Message Passing Algorithm](probabilistic_graphical_modeling/factor_graph.ipynb#Message-Passing-Algorithm)  
