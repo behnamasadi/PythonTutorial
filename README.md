@@ -7,7 +7,7 @@ Dependencies:
 conda create -n PythonTutorial
 conda activate PythonTutorial
 conda install scipy numpy matplotlib pywavelets scikit-image anaconda::ipython anaconda::sympy
-conda install -c conda-forge
+conda install -c conda-forge jupyterlab
 conda install -c anaconda networkx
 ```
 
@@ -60,6 +60,8 @@ conda install -c anaconda networkx
 - [Gaussian Processes](machine_learning/gaussian_processes/index.ipynb)  
 - [Radial Basis Function](machine_learning/radial_basis_function/index.ipynb)  
 - [Vector Quantization](machine_learning/vector_quantization/index.ipynb)  
+- [Ill-conditioned problem](machine_learning/linear_equation/ill_conditioned_problem.ipynb)  
+- [Solving linear equations](machine_learning/linear_equation/solving_linear_equations.ipynb)  
 
 # [Lie Group and Lie Algebra](#)
 - [Lie Group and Lie Algebra](lie_group_lie_algebra/index.ipynb)   
