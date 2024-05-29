@@ -1,16 +1,18 @@
-.settings
-.project
-.pydevproject
-temp/*
 */*.log
 **/__pycache__/*
 **/build/*
 **/*.so
-**/.ipynb_checkpoints
+**/.ipynb_checkpoints/
 .pkl
 *.gz
-*.pyc*
 *egg-info*
-*dist*
 *build*
-.ipynb_checkpoints
+# Ignore compiled Python bytecode files
+*.pyc
+# Ignore Python cache directories
+__pycache__/
+# Ignore environment-specific settings
+.env
+# Ignore editor-specific files
+.vscode/
+.idea/
