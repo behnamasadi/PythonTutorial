@@ -82,7 +82,52 @@ or
 To install the packages in your requirements.txt file
 
 `conda install --file conda-requirements.txt`
+
+## 1.9. create environment.yml 
+
+`environment.yml`: Handles the entire environment setup, including specifying the Python version and any non-Python dependencies.
+`requirements.txt` used with pip and virtualenv. `environment.yml` used with Conda.
+
+Example of environment.yml File:
+
+```yaml
+name: myenv
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8
+  - numpy=1.21.0
+  - pandas>=1.3.0
+  - flask
+  - scipy
+  - scikit-learn
+  - matplotlib
+  - pip:
+    - requests
+    - beautifulsoup4
+```
+
+
+Example Usage
+
+`conda env create -f environment.yml`
+
+or
+
+`conda env update --name <myenv> -f environment.yml`
+
+To update an existing environment with changes made in the `environment.yml` file, use:
+
+`conda env update -f environment.yml --prune`
+
  
+
+## 1.9.1. creating environment.yml
+
+````
+conda env export --name <myenv> --no-builds > environment.yml
+```
 # 2.pip
 
 ## 2.1. using pip to install packages to conda environment
