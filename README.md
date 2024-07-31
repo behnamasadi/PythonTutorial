@@ -202,5 +202,8 @@ conda install -c anaconda networkx
 [Creational](Tutorials/design_pattern/Creational)  
 [Structural](Tutorials/design_pattern/Structural)  
 
+## rerun
+
+[ How to](rerun/demo.ipynb)
 
 ![alt text](https://img.shields.io/badge/license-BSD-blue.svg)
