@@ -206,4 +206,10 @@ conda install -c anaconda networkx
 
 [ How to](rerun/demo.ipynb)
 
+
+## LLM
+[A reading list that from Ilya Sutskever](https://arc.net/folder/D0472A20-9C20-4D3F-B145-D2865C0A9FEE)  
+[ollama](https://github.com/ollama/ollama)  
+[open-webui](https://github.com/open-webui/open-webui)  
+
 ![alt text](https://img.shields.io/badge/license-BSD-blue.svg)
