@@ -9,6 +9,8 @@ conda activate PythonTutorial
 conda install scipy numpy matplotlib pywavelets scikit-image anaconda::ipython anaconda::sympy
 conda install -c conda-forge jupyterlab
 conda install -c anaconda networkx
+conda install anaconda::pandas
+conda install conda-forge::acstools
 ```
 
 
@@ -20,7 +22,7 @@ conda install -c anaconda networkx
 - [Feature Preprocessing](machine_learning/feature_preprocessing)  
 - [Feature Selection And Analysis](machine_learning/feature_selection_and_analysis)  
 - [Generative and Discriminative Algorithm](machine_learning/generative_and_discriminative_algorithm)  
-- [Hidden Markov Model](machine_learning/hidden_markov_model)  
+- [Hidden Markov Model](machine_learning/hidden_markov_model/hmm.ipynb)  
 - [Hyperparameter](machine_learning/hyperparameter)  
 - [Cohen's Kappa coefficient](machine_learning/kappa_coefficient/index.ipynb)  
 - [Entropy](machine_learning/entropy/index.ipynb)   
@@ -90,8 +92,9 @@ conda install -c anaconda networkx
   - [Likelihood ratio](probability/likelihood.ipynb#Likelihood-ratio)  
   - [Log odds](probability/likelihood.ipynb#Log-odds)  
   - [Odds ratio](probability/likelihood.ipynb#Odds-ratio)  
-- [Maximum Likelihood Estimation (MLE)](probability/maximum_likelihood_estimation/index.ipynb)  
-- [Maximum a Posteriori Estimation (MAP)](probability/maximum_a_posteriori_estimation_MAP/index.ipynb)  
+  - [Maximum Likelihood Estimation (MLE)](probability/probability/likelihood.ipynb#Maximum-Likelihood-Estimation-(MLE))  
+- [Maximum A Posteriori (MAP) Estimation](probability/maximum_a_posteriori_estimation_MAP/index.ipynb)  
+- [Maximum A-Posteriori (MAP) Inference](machine_learning/hidden_markov_model/hmm.ipynb#Maximum-A-Posteriori-(MAP)-Inference)  
 - [Minimum Mean Square Error (MMSE)](probability/minimum_mean_square_error_MMSE/index.ipynb)  
 - [Probability Distributions](probability/probability_distributions.ipynb)  
   - [Multinomial Distribution](probability/probability_distributions.ipynb#Multinomial-Distribution)  
@@ -111,7 +114,7 @@ conda install -c anaconda networkx
 - [Naive Bayes Classifier](machine_learning/naive_bayes_classifier/naive_bayes_classifier.ipynb)
 - [Bayesian Network (Bayes Network, Belief Network, or Decision Network)](probabilistic_graphical_modeling/bayesian_network.ipynb)  
 - [High Dimensional Probability](https://www.math.uci.edu/~rvershyn/teaching/hdp/hdp.html)  
-- [Factor Graph](probabilistic_graphical_modeling/factor_graph.md)  
+- [Factor Graph](probabilistic_graphical_modeling/factor_graph.ipynb)  
   - [Message Passing Algorithm](probabilistic_graphical_modeling/factor_graph.ipynb#Message-Passing-Algorithm)  
   - [Belief Propagation](probabilistic_graphical_modeling/factor_graph.ipynb#Belief-Propagation)  
   - [A visual introduction to Gaussian Belief Propagation](probabilistic_graphical_modeling/factor_graph.ipynb#A-visual-introduction-to-Gaussian-Belief-Propagation)  
