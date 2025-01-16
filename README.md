@@ -67,8 +67,6 @@ conda install conda-forge::acstools
 - [Ill-conditioned Problem](machine_learning/linear_equation/ill_conditioned_problem.ipynb)  
 - [Solving Linear Equations](machine_learning/linear_equation/solving_linear_equations.ipynb)  
 
-# [Lie Group and Lie Algebra](#)
-- [Lie Group and Lie Algebra](lie_group_lie_algebra/index.ipynb)   
 # [Probability](probability/)  
 - [Expected Value, Variance, Covariance](probability/covariance_expected_value.ipynb#Expected-Value)  
 - [PMF, PDF, CDF, Marginal Probability, Joint Probability](probability/cdf_pmf_pdf_joint_marginal.ipynb)  
