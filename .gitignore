@@ -16,3 +16,4 @@ __pycache__/
 # Ignore editor-specific files
 .vscode/
 .idea/
+**/sandbox/*

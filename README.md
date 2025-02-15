@@ -19,6 +19,25 @@ git clone git@github.com:behnamasadi/PythonTutorial.git
 ln -s /home/$USER/workspace/PythonTutorial /home/$USER/anaconda3/envs/PythonTutorial/src
 ```
 
+If you get `conda: command not found` just add it to the path:
+
+```
+export PATH="$HOME/anaconda3/bin:$PATH"
+```
+then 
+```
+conda init
+```
+
+
+Enable/ disable auto activate base: you can check this using the following command: 
+
+`conda config --show | grep auto_activate_base`
+
+to set it false: 
+
+`conda config --set auto_activate_base False`
+
 
 # [Machine Learning](machine_learning/)  
 - [Bias Variance](machine_learning/bias_variance/index.ipynb)    
