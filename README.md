@@ -38,7 +38,6 @@ to set it false:
 
 `conda config --set auto_activate_base False`
 
-
 # [Machine Learning](machine_learning/)  
 - [Bias Variance](machine_learning/bias_variance/index.ipynb)    
 - [Clustering](machine_learning/clustering)  
@@ -92,6 +91,8 @@ to set it false:
 - [Ill-conditioned Problem](machine_learning/linear_equation/ill_conditioned_problem.ipynb)  
 - [Solving Linear Equations](machine_learning/linear_equation/solving_linear_equations.ipynb)  
 
+---
+
 # [Probability](probability/)  
 - [Expected Value, Variance, Covariance](probability/covariance_expected_value.ipynb#Expected-Value)  
 - [PMF, PDF, CDF, Marginal Probability, Joint Probability](probability/cdf_pmf_pdf_joint_marginal.ipynb)  
@@ -129,6 +130,8 @@ to set it false:
 - [Probability Space, Measure](probability/probability_space_measure.ipynb)  
 - [Confidence Interval](machine_learning/confidence_interval/index.ipynb)  
 
+---
+
 # [Probabilistic Graphical Modeling](probabilistic_graphical_modeling/)  
 
 - [Probabilistic Graphical Models](probabilistic_graphical_modeling/probabilistic_graphical_models.ipynb)  
@@ -142,6 +145,8 @@ to set it false:
   - [Belief Propagation](probabilistic_graphical_modeling/factor_graph.ipynb#Belief-Propagation)  
   - [A visual introduction to Gaussian Belief Propagation](probabilistic_graphical_modeling/factor_graph.ipynb#A-visual-introduction-to-Gaussian-Belief-Propagation)  
   - [Variable Elimination](probabilistic_graphical_modeling/factor_graph.ipynb#Variable-Elimination)  
+
+---
 
 # [Signal System](signal_system/)    
 
@@ -157,6 +162,8 @@ to set it false:
 - [non-stationary signal](signal_system/non-stationary_signal.ipynb)
 - [signal to noise ratio](signal_system/signal_to_noise_ratio.ipynb)
 - [spectral analysis](signal_system/spectral_analysis.ipynb)
+
+---
 
 # [Calculus](calculus/)    
 
@@ -176,29 +183,28 @@ to set it false:
 [conda and pip](docs/conda_pip.md)  
 [GUI with Python QT5](PyQT5)  
 
+---
+
 # [Python Tutorials](#)
 ### [**Python Basics**](#)
 [Built-in Types and Functions](python_tutorials/built-in_types_and_functions.ipynb)  
 [Mutable and Immutable Types](python_tutorials/mutable_and_immutable_types.ipynb)  
-[Numbers Representation in Memory, typing](python_tutorials/numbers_representation_typing.ipynb)  
+[Numbers Representation in Memory](python_tutorials/numbers_representation_typing.ipynb)  
 [Strings and String Formatting](python_tutorials/strings_and_string_formatting.ipynb)  
-[Control Flow Structures (if, for, while, match-case)](python_tutorials/control_flow.ipynb)  
-[Exception Handling (`try`, `except`, `finally`), Raising Exceptions (`raise`)](python_tutorials/exception_handling.ipynb)  
+[Control Flow Structures (if, for, while, match-case)](python_tutorials/)  
+[Exception Handling (`try`, `except`, `finally`)](python_tutorials/exception_handling.ipynb)  
 [Assertions (`assert` statement)](python_tutorials/assertions.ipynb)  
-[Doc strings](python_tutorials/docstrings_python.ipynb)
-
+[Raising Exceptions (`raise`)](python_tutorials/)  
 ### [**Data Structures**](#)
-[Python Data Structures set, dict, heapq, collections.deque](python_tutorials/cpp_data_structure_python.ipynb)  
 [Lists, Tuples, Sets, and Dictionaries](python_tutorials/)  
-[Slicing](python_tutorials/slicing.ipynb)  
-[Packing and Unpacking Arguments)](python_tutorials/packing_and_unpacking.ipynb)  
+[Packing and Unpacking Arguments)](python_tutorials/packing_and_unpacking.ipynb)
 [ `*args` and `**kwargs`](python_tutorials/args_kwargs.ipynb)  
 [Arrays (with `array` module and NumPy arrays)](python_tutorials/)  
-[Ellipsis (`...`, three dots)](python_tutorials/ellipsis_three_dots.ipynb)  
+[Ellipsis (`...`, three dots)](python_tutorials/)  
 ### [**Functions and Functional Programming**](python_tutorials/)
-[Functions, Call by value/ ref](python_tutorials/functions.ipynb)  
+[Defining Functions (`def`)](python_tutorials/)  
 [`lambda` Functions (Anonymous functions)](#)  
-[`yield` and Generators](python_tutorials/generators_yield.ipynb)  
+[`yield` and Generators](#)  
 [Decorators (`@decorator_name`)](#)  
 [`functools` (e.g., `lru_cache`, `partial`)](#)  
 
@@ -215,18 +221,19 @@ to set it false:
 [Python Packages and `__init__.py`](python_tutorials/)  
 [`__main__` and Executable Scripts](python_tutorials/)  
 [Virtual Environments and Dependency Management (`venv`, `pip`)](python_tutorials/)  
-[Logging (`logging` module)](python_tutorials/logging.ipynb)  
+[Logging (`logging` module)](python_tutorials/)  
 
 ### [**File Handling and Serialization**](#)
-[File IO (`open`, `read`, `write`), `with` Statement, Context Managers (`contextlib`)](python_tutorials/file_IO_with_statement_contextlib.ipynb)  
+[File I/O (`open`, `read`, `write`), `with` Statement, Context Managers (`contextlib`)](python_tutorials/file I_O_with_statement_contextlib.ipynb)  
+
 [JSON (`json` module)](python_tutorials/)  
 [XML (`xml.etree.ElementTree`)](python_tutorials/)  
-[Pickle (`pickle` module)](python_tutorials/pickle.ipynb)  
+[Pickle (`pickle` module)](python_tutorials/)  
 
 ### [**Standard Library and Useful Modules**](#)
-[Date and Time (`datetime`, `time`)](python_tutorials/datetime_time)  
+[Date and Time (`datetime`, `time`)](python_tutorials/)  
 [Regular Expressions (`re`)](python_tutorials/)  
-[Command Line Arguments and Flags (`sys.argv`, `argparse`)](python_tutorials/argparse_command_line_arg.ipynb)  
+[Command Line Arguments and Flags (`sys.argv`, `argparse`)](python_tutorials/)  
 [`tqdm` (Progress Bar)](python_tutorials/)  
 [`collections` (`Counter`, `defaultdict`, `namedtuple`)](python_tutorials/)  
 
@@ -237,9 +244,9 @@ to set it false:
 [FastAPI or Flask Basics](python_tutorials/)  
 
 ### [**Data Science and Visualization**](#)
-[NumPy](python_tutorials/numpy_tutorials.ipynb)  
+[NumPy](python_tutorials/numpy_tutorials..ipynb)  
 [Pandas](python_tutorials/panda_explained.ipynb)  
-[Data Visualization (`matplotlib`, `seaborn`, `plotly`)](python_tutorials/matplotlib.ipynb)  
+[Data Visualization (`matplotlib`, `seaborn`, `plotly`)](python_tutorials/)  
 [Graph Processing (`networkx`)](python_tutorials/)  
 
 ### [**Testing and Code Quality**](#)
@@ -257,20 +264,15 @@ to set it false:
 
 
 ### [**Miscellaneous and Tips**](#)
-[Python Tips and Tricks](python_tutorials/tips_and_tricks)  
+[Python Tips and Tricks](#)  
 [Code Visualization Tools](#)  
 [Writing Efficient and Pythonic Code](#)  
 
 ---
 
-## [Design Pattern](Tutorials/design_pattern)
-[Behavioral](Tutorials/design_pattern/Behavioral)  
-[Creational](Tutorials/design_pattern/Creational)  
-[Structural](Tutorials/design_pattern/Structural)  
 
 ## rerun
-
-[ How to](rerun/demo.ipynb)
+[demo](rerun/demo.ipynb)
 
 
 ## LLM
