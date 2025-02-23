@@ -278,3 +278,5 @@ to set it false:
 [open-webui](https://github.com/open-webui/open-webui)  
 
 ![alt text](https://img.shields.io/badge/license-BSD-blue.svg)
+![CI Tests](https://github.com/behnamasadi/PythonTutorial/actions/workflows/ci.yml/badge.svg)
+
