@@ -262,14 +262,15 @@ to set it false:
 
 ---
 
-## [Design Pattern](Tutorials/design_pattern)
-[Behavioral](Tutorials/design_pattern/Behavioral)  
-[Creational](Tutorials/design_pattern/Creational)  
-[Structural](Tutorials/design_pattern/Structural)  
 
 ## rerun
 
 [ How to](rerun/demo.ipynb)
+
+
+## Transformers
+
+[Transformer Architecture](transformer/attention.ipynb)
 
 
 ## LLM
