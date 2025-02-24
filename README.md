@@ -1,6 +1,15 @@
-# Python Snippet Codes
+# [Python Snippet Codes](#)
 
-This repository contains my snippet codes for my Python projects. It includes various examples for:
+This repository contains my snippet codes for my Python projects. It includes various examples for: Machine Learning, Probability, Probabilistic Graphical Modeling, Signal System, Calculus, and Rerun.
+
+
+![alt text](https://img.shields.io/badge/license-BSD-blue.svg)
+![CI Tests](https://github.com/behnamasadi/PythonTutorial/actions/workflows/ci.yml/badge.svg)
+![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/behnamasadi/PythonTutorial)
+![GitHub Release](https://img.shields.io/github/v/release/behnamasadi/PythonTutorial)
+![GitHub Repo stars](https://img.shields.io/github/stars/behnamasadi/PythonTutorial)
+![GitHub forks](https://img.shields.io/github/forks/behnamasadi/PythonTutorial)
+
 
 Dependencies:
 ```
@@ -263,21 +272,22 @@ to set it false:
 ---
 
 
-## rerun
+## [rerun](#)
 
-[ How to](rerun/demo.ipynb)
+[Demo](rerun/demo.ipynb)
 
+---
 
-## Transformers
+## [Transformers](#)
 
 [Transformer Architecture](transformer/attention.ipynb)
 
+---
 
-## LLM
+## [LLM](#)
 [A reading list that from Ilya Sutskever](https://arc.net/folder/D0472A20-9C20-4D3F-B145-D2865C0A9FEE)  
 [ollama](https://github.com/ollama/ollama)  
 [open-webui](https://github.com/open-webui/open-webui)  
 
-![alt text](https://img.shields.io/badge/license-BSD-blue.svg)
-![CI Tests](https://github.com/behnamasadi/PythonTutorial/actions/workflows/ci.yml/badge.svg)
+
 
