@@ -76,13 +76,12 @@ to set it false:
   - [Transformers](machine_learning/nn/transformers.ipynb)  
   - [Dropout Layers](machine_learning/nn/dropout_layers.ipynb)  
   - [3D Deep Learning](machine_learning/nn/3D_deep_learning.ipynb)  
-  - [Neural Network Optimizers](machine_learning/optimization/optimizers.ipynb)  
 - [Neural Network Optimizers](machine_learning/neural_network_optimizers/optimizers.ipynb)  
 - [Optimization and Null Space](machine_learning/null_space/index.ipynb)  
 - [Constrained Optimization](machine_learning/null_space/index.ipynb#Constrained-Optimization)   
 - [Curve Fitting](machine_learning/curve_fitting)  
 - [Convex Optimization](machine_learning/convex_optimization)   
-- [Regularization](machine_learning/regularization)  
+- [Ridge Regression, Regularization](machine_learning/regularization)  
 - [Non-linear least squares](machine_learning/non_linear_least_squares/non_linear_least_squares.md)  
 - [Levenberg–Marquardt algorithm](machine_learning/non_linear_least_squares/levenberg_marquardt_algorithm.md)  
 - [Gauss Newton](machine_learning/non_linear_least_squares/gauss_newton.md)    
@@ -92,7 +91,6 @@ to set it false:
   - [Test Statistic (t-test)](machine_learning/hypothesis_testing/index.ipynb#Test-Statistic)
 - [Kernel Function, Support Vector Machine (SVM)](machine_learning/kernel_function/index.ipynb)  
 - [Linear Equation](machine_learning/linear_equation)  
-- [Ridge Regression](machine_learning/ridge_regression)  
 - [Regression Analysis](machine_learning/regression_analysis/regression_analysis.ipynb)  
 - [Linear Discriminant Analysis (LDA)](machine_learning/linear_discriminant_analysis_LDA/linear_discriminant_analysis_LDA.ipynb)
 - [Gaussian Processes](machine_learning/gaussian_processes/index.ipynb)  
@@ -113,8 +111,6 @@ to set it false:
 - [Marginal Distribution vs. Conditional Distribution](probability/marginal_distribution_vs_conditional_distribution.ipynb)  
 - [Conditional Distribution of Y Given X](probability/conditional_distribution_of_y_given_x.ipynb)
 - [Chain Rule](probability/chain_rule.ipynb)  
-- [Conditional Probability](probability/conditional_probability.ipynb)  
-- [Conditionally Independent](conditional_probability.ipynb#Conditionally-Independent)  
 - [Correlation Matrix](probability/correlation_matrix.ipynb)  
 - [Density Estimation](probability/density_estimation.ipynb)  
 - [Important Extensions](probability/important_extensions.ipynb)  
@@ -178,7 +174,7 @@ to set it false:
 - [Hessian](calculus/derivatives.ipynb#Hessian)
 - [Taylor's theorem for single functions](calculus/taylor's_theorem.ipynb#Taylor's-theorem-for-single-functions)
 - [Taylor's theorem for multivariate functions](calculus/taylor's_theorem.ipynb#Taylor's-theorem-for-multivariate-functions)
-- [Differentiation](differentiation.ipynb)  
+- [Differentiation](calculus/differentiation.ipynb)  
 
 [Data Structure](data_structure)    
 [Jupyter Notebook/ Sympy](Jupyter_Tutorial)  
@@ -232,7 +228,7 @@ to set it false:
 [Pickle (`pickle` module)](python_tutorials/pickle.ipynb)  
 
 ### [**Standard Library and Useful Modules**](#)
-[Date and Time (`datetime`, `time`)](python_tutorials/datetime_time)  
+[Date and Time (`datetime`, `time`)](python_tutorials/datetime_time.ipynb)  
 [Regular Expressions (`re`)](python_tutorials/)  
 [Command Line Arguments and Flags (`sys.argv`, `argparse`)](python_tutorials/argparse_command_line_arg.ipynb)  
 [`tqdm` (Progress Bar)](python_tutorials/)  
@@ -265,16 +261,9 @@ to set it false:
 
 
 ### [**Miscellaneous and Tips**](#)
-[Python Tips and Tricks](python_tutorials/tips_and_tricks)  
+[Python Tips and Tricks](python_tutorials/tips_and_tricks.ipynb)  
 [Code Visualization Tools](#)  
 [Writing Efficient and Pythonic Code](python_tutorials/writing_efficient_and_pythonic_code.ipynb)  
-
----
-
-
-## [rerun](#)
-
-[Demo](rerun/demo.ipynb)
 
 ---
 
