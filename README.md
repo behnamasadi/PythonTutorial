@@ -175,7 +175,7 @@ to set it false:
 - [Taylor's theorem for single functions](calculus/taylor's_theorem.ipynb#Taylor's-theorem-for-single-functions)
 - [Taylor's theorem for multivariate functions](calculus/taylor's_theorem.ipynb#Taylor's-theorem-for-multivariate-functions)
 - [Differentiation](calculus/differentiation.ipynb)  
-
+- [Automatic Differentiation Forward Mode Dual Number](automatic_differentiation_forward_mode_dual_number.ipynb)
 [Data Structure](data_structure)    
 [Jupyter Notebook/ Sympy](Jupyter_Tutorial)  
 [conda and pip](docs/conda_pip.md)  
