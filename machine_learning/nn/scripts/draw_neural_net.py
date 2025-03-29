@@ -1,13 +1,14 @@
 import matplotlib.pyplot as plt
 
+
 def draw_neural_net(ax, left, right, bottom, top, layer_sizes):
     '''
     Draw a neural network cartoon using matplotilb.
-    
+
     :usage:
         >>> fig = plt.figure(figsize=(12, 12))
         >>> draw_neural_net(fig.gca(), .1, .9, .1, .9, [4, 7, 2])
-    
+
     :parameters:
         - ax : matplotlib.axes.AxesSubplot
             The axes on which to plot the cartoon (get e.g. by plt.gca())
@@ -41,10 +42,11 @@ def draw_neural_net(ax, left, right, bottom, top, layer_sizes):
                 line = plt.Line2D([n*h_spacing + left, (n + 1)*h_spacing + left],
                                   [layer_top_a - m*v_spacing, layer_top_b - o*v_spacing], c='k')
                 ax.add_artist(line)
-                
-                
-#fig = plt.figure(figsize=(12, 12))
-#ax = fig.gca()
-#ax.axis('off')
-#draw_neural_net(ax, .1, .95, .1, .95, [6, 4, 6,3])
-#fig.savefig('nn.svg') 
+
+
+fig = plt.figure(figsize=(12, 12))
+ax = fig.gca()
+ax.axis('off')
+# draw_neural_net(ax, .1, .95, .1, .95, [6, 4, 6, 3])
+draw_neural_net(ax, .22, .75, .4, .55, [1, 1, 1, 1])
+fig.savefig('nnnnn.svg')
