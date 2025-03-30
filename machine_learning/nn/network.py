@@ -9,11 +9,8 @@ simple, easily readable, and easily modifiable.  It is not optimized,
 and omits many desirable features.
 """
 
-# Libraries
-# Standard library
-import random
 
-# Third-party libraries
+import random
 import numpy as np
 
 
