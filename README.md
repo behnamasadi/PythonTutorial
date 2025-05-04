@@ -49,7 +49,6 @@ to set it false:
 
 
 # [Machine Learning](machine_learning/)  
-- [Bias Variance](machine_learning/bias_variance/index.ipynb)    
 - [Clustering](machine_learning/clustering)  
 - [Dimensionality Reduction, Manifold Learning](machine_learning/dimensionality_reduction_manifold_learning)  
 - [Ensembling](machine_learning/ensembling)  
@@ -61,7 +60,7 @@ to set it false:
 - [Cohen's Kappa coefficient](machine_learning/kappa_coefficient/index.ipynb)  
 - [Entropy](machine_learning/entropy/index.ipynb)   
 - [Learning Process Steps Strategy](machine_learning/learning_process_steps_strategy)  
-- [Metrics and Scoring For Model Evaluation, ROC,F1, F2 Score, TP, FP, TN, FN](machine_learning/metrics_and_scoring_for_model_evaluation/metrics_and_scoring_methods.ipynb)  
+- [Metrics and Scoring For Model Evaluation, Bias Variance, ROC,F1, F2 Score, TP, FP, TN, FN](machine_learning/metrics_and_scoring_for_model_evaluation/metrics_and_scoring_methods.ipynb)  
 - [Model Diagnostics and Evaluation Techniques](machine_learning/metrics_and_scoring_for_model_evaluation/metrics_and_scoring_methods.ipynb)
 - [Training Validation Test set](machine_learning/training_validation_test/index.ipynb)
 - [Model Selection](machine_learning/model_selection)  
@@ -109,7 +108,7 @@ to set it false:
   - [Likelihood ratio](probability/likelihood.ipynb#Likelihood-ratio)  
   - [Log odds](probability/likelihood.ipynb#Log-odds)  
   - [Odds ratio](probability/likelihood.ipynb#Odds-ratio)  
-  - [Maximum Likelihood Estimation (MLE)](probability/probability/likelihood.ipynb#Maximum-Likelihood-Estimation-(MLE))  
+  - [Maximum Likelihood Estimation (MLE)](probability/likelihood.ipynb#Maximum-Likelihood-Estimation-(MLE))  
 - [Maximum A Posteriori (MAP) Estimation](probability/maximum_a_posteriori_estimation_MAP/index.ipynb)  
 - [Maximum A-Posteriori (MAP) Inference](machine_learning/hidden_markov_model/hmm.ipynb#Maximum-A-Posteriori-(MAP)-Inference)  
 - [Minimum Mean Square Error (MMSE)](probability/minimum_mean_square_error_MMSE/index.ipynb)  
@@ -164,7 +163,7 @@ to set it false:
 - [Taylor's theorem for single functions](calculus/taylor's_theorem.ipynb#Taylor's-theorem-for-single-functions)
 - [Taylor's theorem for multivariate functions](calculus/taylor's_theorem.ipynb#Taylor's-theorem-for-multivariate-functions)
 - [Differentiation](calculus/differentiation.ipynb)  
-- [Automatic Differentiation Forward Mode Dual Number](automatic_differentiation_forward_mode_dual_number.ipynb)
+- [Automatic Differentiation Forward Mode Dual Number](calculus/automatic_differentiation_forward_mode_dual_number.ipynb)
 
 [Data Structure](data_structure)    
 [Jupyter Notebook/ Sympy](Jupyter_Tutorial)  
