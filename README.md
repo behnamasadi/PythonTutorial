@@ -221,7 +221,7 @@ to set it false:
 [Date and Time (`datetime`, `time`)](python_tutorials/datetime_time.ipynb)  
 [Regular Expressions (`re`)](python_tutorials/)  
 [Command Line Arguments and Flags (`sys.argv`, `argparse`)](python_tutorials/argparse_command_line_arg.ipynb)  
-[`tqdm` (Progress Bar)](python_tutorials/)  
+[`tqdm` (Progress Bar)](python_tutorials/progress_bar_tqdm.ipynb)  
 [`collections` (`Counter`, `defaultdict`, `namedtuple`)](python_tutorials/)  
 
 ### [**Networking and Web Development**](#)
