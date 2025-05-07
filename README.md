@@ -246,7 +246,7 @@ to set it false:
 [Metaprogramming (Metaclasses, `type`, `exec`, `eval`)](python_tutorials/)  
 [Memory Management and Garbage Collection](python_tutorials/)  
 [Cython for Performance Optimization](python_tutorials/)  
-
+[Syntactic sugar](python_tutorials/syntactic_sugar.ipynb)
 
 
 ### [**Miscellaneous and Tips**](#)
