@@ -212,6 +212,7 @@ to set it false:
 
 ### [**File Handling and Serialization**](#)
 [File IO (`open`, `read`, `write`), `with` Statement, Context Managers (`contextlib`)](python_tutorials/file_IO_with_statement_contextlib.ipynb)  
+[Reading/ executing files, absolute/ relative path](python_tutorials/reading_executing_files_absolute_relative_path.ipynb)  
 [JSON (`json` module)](python_tutorials/)  
 [XML (`xml.etree.ElementTree`)](python_tutorials/)  
 [Pickle (`pickle` module)](python_tutorials/pickle.ipynb)  
