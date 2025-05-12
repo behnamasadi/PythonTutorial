@@ -213,9 +213,11 @@ to set it false:
 ### [**File Handling and Serialization**](#)
 [File IO (`open`, `read`, `write`), `with` Statement, Context Managers (`contextlib`)](python_tutorials/file_IO_with_statement_contextlib.ipynb)  
 [Reading/ executing files, absolute/ relative path](python_tutorials/reading_executing_files_absolute_relative_path.ipynb)  
-[JSON (`json` module)](python_tutorials/)  
-[XML (`xml.etree.ElementTree`)](python_tutorials/)  
+[JSON](python_tutorials/)  
+[XML](python_tutorials/)  
+[YAML)](python_tutorials/yaml.ipynb)
 [Pickle (`pickle` module)](python_tutorials/pickle.ipynb)  
+  
 
 ### [**Standard Library and Useful Modules**](#)
 [Date and Time (`datetime`, `time`)](python_tutorials/datetime_time.ipynb)  
@@ -247,8 +249,8 @@ to set it false:
 [Metaprogramming (Metaclasses, `type`, `exec`, `eval`)](python_tutorials/)  
 [Memory Management and Garbage Collection](python_tutorials/)  
 [Cython for Performance Optimization](python_tutorials/)  
-[Syntactic sugar](python_tutorials/syntactic_sugar.ipynb)
-
+[Syntactic sugar](python_tutorials/syntactic_sugar.ipynb)  
+[Dataclasses](python_tutorials/dataclasses.ipynb)  
 
 ### [**Miscellaneous and Tips**](#)
 [Python Tips and Tricks](python_tutorials/tips_and_tricks.ipynb)  

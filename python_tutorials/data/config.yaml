@@ -1,0 +1,7 @@
+model:
+  name: resnet18
+  weights: pretrained
+train:
+  batch_size: 32
+  epochs: 10
+
