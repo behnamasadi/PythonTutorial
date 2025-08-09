@@ -100,6 +100,7 @@ to set it false:
     * [chi-square-test](machine_learning/hypothesis_testing/chi-square-test.ipynb)
     * [likelihood ratio-test](machine_learning/hypothesis_testing/likelihood_ratio-test.ipynb)
     * [ANOVA](machine_learning/hypothesis_testing/ANOVA.ipynb)
+- [Kernel Function, Support Vector Machine (SVM)](machine_learning/kernel_function/index.ipynb) 
 - [Linear Equation](machine_learning/linear_equation)  
 - [Regression Analysis](machine_learning/regression_analysis/regression_analysis.ipynb)  
 - [Linear Discriminant Analysis (LDA)](machine_learning/linear_discriminant_analysis_LDA/linear_discriminant_analysis_LDA.ipynb)
