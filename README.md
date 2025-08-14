@@ -70,7 +70,7 @@ to set it false:
 - [Cohen's Kappa coefficient](machine_learning/kappa_coefficient/index.ipynb)  
 - [Entropy](machine_learning/entropy/index.ipynb)   
 - [Learning Process Steps Strategy](machine_learning/learning_process_steps_strategy)  
-- [Metrics and Scoring For Model Evaluation, Bias Variance, ROC,F1, F2 Score, TP, FP, TN, FN](machine_learning/metrics_and_scoring_for_model_evaluation/metrics_and_scoring_methods.ipynb)  
+- [Metrics and Scoring For Model Evaluation, Bias Variance Trade off, ROC, AUC, F1, TP, FP, TN, FN](machine_learning/metrics_and_scoring_for_model_evaluation/metrics_and_scoring_methods.ipynb)  
 - [Model Diagnostics and Evaluation Techniques](machine_learning/metrics_and_scoring_for_model_evaluation/metrics_and_scoring_methods.ipynb)
 - [Reliability Score](machine_learning/reliability_score/index.ipynb)
   * [Cronbach’s Alpha](machine_learning/reliability_score/index.ipynb)  
