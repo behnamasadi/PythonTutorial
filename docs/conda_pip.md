@@ -1,235 +1,232 @@
-# 1. conda
-## 1.1. difference between Conda and anaconda
+# Conda, Pip, Pipx & Reproducible Environments 
 
-- **Conda** is the system that handles package management and environment management.
-- **Anaconda** is a distribution – a pre-packaged collection of tools and libraries. One of the tools included in this distribution is Conda.
+## TL;DR (quick recipe for mixed conda+pip)
+1. **Prefer one ecosystem** (e.g., `conda-forge`) and set `channel_priority: strict`.
 
-## 1.2. adding conda to the path
+   - **defaults**: Maintained by Anaconda, Inc, Often ships **MKL** builds for NumPy/SciPy (good performance on Intel/AMD CPUs). Slightly **slower updates** 
 
-On Linux
+   - **conda-forge**: Large, community-maintained channel; **fast updates** and **very broad coverage**. Consistent toolchains & pinning across packages → fewer ABI mismatches. Typically uses **OpenBLAS** by default (you can switch to MKL if you want).
 
-`export PATH=/home/$USER/anaconda3/bin/:$PATH`
+   - **Mixing them**: You *can* mix, but solver friction increases. If you must:
 
-On Windows: 
+     * Put **conda-forge first** and set `channel_priority: strict`.
+     * Or stay on **defaults** and selectively pull from forge for specific packages (but pin carefully).
+     * GPU stacks (e.g., PyTorch, CUDA) sometimes come from dedicated channels (e.g., `pytorch`, `nvidia`). Follow their official install lines, but keep the rest on a single ecosystem.
 
-1. From the Start Menu open the Anaconda Prompt.
-2. `where python`
-3. The default path should be `C:\Users\<user-name>\Anaconda3\python.exe` and `C:\Users\<user-name>\Anaconda3\envs\my-env\python.exe`
+2. Create env with **conda packages first**, then install **pip‑only** packages.
+3. Capture a portable spec with **`environment.yml`** (using `--no-builds`) and include a **`pip:`** subsection with `conda env export --no-builds | grep -v "^prefix:" > environment.yml
+`
+4. Freeze exact versions per platform with **conda-lock** and share the lock files with `conda-lock -f environment.yml -p linux-64`
+5. Recreate with `conda-lock install …` for deterministic results with `conda-lock install --name YOURENV conda-lock.yml`
 
-## 1.3. conda activating the base environment
-Enable/ disable auto activate base: you can check this using the following command: 
+---
 
-`conda config --show | grep auto_activate_base`
+## 1) Concepts & tool roles
+- **Conda**: environment + package manager.
+- **Anaconda**: a distribution that *includes* Conda and many packages.
+- **Pip (inside env)**: install Python packages that aren’t conveniently available via Conda.
+- **Pipx (outside envs)**: install global‑ish **CLI tools** in isolated venvs (e.g., `conda-lock`, `pre-commit`).
+- **Conda‑lock**: generates lock files for exact, deterministic installs per platform.
+- **Conda‑pack**: creates a tarball snapshot of an existing env (good for deployment, not a spec).
 
-To set it false: 
+---
 
-`conda config --set auto_activate_base False`
-
-## 1.4.update
- 
-### 1.4.1 update conda
-
-
-`conda update conda`: This command updates the Conda package manager itself to the latest version available in the currently active environment and channel. It ensures that you have the latest features, bug fixes, and performance improvements for Conda.
-
-### 1.4.2. update anaconda
-`conda update anaconda`: The Anaconda distribution is a bundled collection of various scientific libraries and tools. When you run this command, you're updating the entire Anaconda distribution within the currently active environment. Note that this might not always give you the latest versions of individual packages. Instead, it'll update to versions that are tested and confirmed to work well together by the Anaconda team.
-
-### 1.4.3. updates packages in the currently active conda environment
-`conda update --all`: This command updates all packages in the **currently active** conda environment to their latest versions, respecting the environment's constraints (i.e., ensuring compatibility between packages). It's a way to ensure that all of the libraries and tools in your current environment are up-to-date.
-
-or you can specify the environment:  `conda update -n myenv --all`:
-   
-
-
-## 1.5. list all conda environments
-
-`conda info --envs` 
-
-or 
-
-`conda info -e`
-
-## 1.6.  get list of packages installed in Anaconda:
-
-`conda list`
-
-
-## 1.7. change environment location:
-
-`conda create --prefix /tmp/test-env python=3.10`
-
-
-## 1.8. create requirements.txt 
-
-If you are using pip, export your packages to the requirements.txt:
-
-`pip freeze > pip-requirements.txt`
-
-To install the packages in your pip-requirements.txt file
-
-`pip install -r pip-requirements.txt`
-
-If you are using conda environment:
-
-`conda list -e > conda-requirements.txt`
-
-or 
-
-`conda list --export > conda-requirements.txt`
-
-
-To install the packages in your requirements.txt file
-
-`conda install --file conda-requirements.txt`
-
-## 1.9. create environment.yml 
-
-`environment.yml`: Handles the entire environment setup, including specifying the Python version and any non-Python dependencies.
-`requirements.txt` used with pip and virtualenv. `environment.yml` used with Conda.
-
-Example of environment.yml File:
-
-```yaml
-name: myenv
-channels:
-  - conda-forge
-  - defaults
-dependencies:
-  - python=3.8
-  - numpy=1.21.0
-  - pandas>=1.3.0
-  - flask
-  - scipy
-  - scikit-learn
-  - matplotlib
-  - pip:
-    - requests
-    - beautifulsoup4
-```
-
-
-Example Usage
-
-`conda env create -f environment.yml`
-
-or
-
-`conda env update --name <myenv> -f environment.yml`
-
-To update an existing environment with changes made in the `environment.yml` file, use:
-
-`conda env update -f environment.yml --prune`
-
- 
-
-## 1.9.1. creating environment.yml
-
-````
-conda env export --name <myenv> --no-builds > environment.yml
-```
-# 2.pip
-
-## 2.1. using pip to install packages to conda environment
-
-```
-conda create -n venv_name
-conda activate venv_name
-conda install pip
-```
-
-check the path for default pip: 
-
-`which -a pip`
-
-Now install new packages by doing:
-
+## 2) Install & PATH basics
+### 2.1 Ubuntu/WSL: install Pipx (recommended)
 ```bash
-/anaconda/envs/<env-name>/bin/pip install package_name
+sudo apt update
+sudo apt install -y pipx
+pipx ensurepath
+exec $SHELL -l   # open a new shell
+pipx --version
 ```
- 
-or you can:
+> If you prefer bootstrapping via Python: `sudo apt install -y python3-venv && python3 -m ensurepip --upgrade && python3 -m pip install --user pipx && ~/.local/bin/pipx ensurepath`.
 
-
+### 2.3 Add Conda to PATH (Linux)
 ```bash
-python -m pip install package_name
+export PATH="$HOME/anaconda3/bin:$PATH"
+```
+> Prefer launching Conda by sourcing `conda.sh` from your shell profile rather than hardcoding paths if possible.
+
+### 2.4 Auto‑activating base (optional)
+```bash
+conda config --show | grep auto_activate_base
+conda config --set auto_activate_base false
 ```
 
-- **`python -m pip install package_name`**:
-This command explicitly specifies which Python interpreter to use for the installation process. By invoking `pip` using `python -m pip`, you are essentially saying, "Use the `pip` associated with this Python interpreter."
+---
 
-It's particularly useful when you have multiple versions of Python installed on your system or when using virtual environments. It ensures that the package is installed for the Python version you're currently using or intend to use.
+## 3) Create & manage environments
 
-
-- **`pip install package_name`**:
-This command uses the `pip` executable directly. The system decides which `pip` to use based on your environment's configuration, such as the PATH variable in Unix-like operating systems or the system's environment variables in Windows.
-If you have a single Python installation and `pip` is correctly set up in your PATH, this command works just fine and installs the package as expected.
-
-
-###  2.2. list pip installed packages
-
-`pip freeze`
-
-or 
-
-`pip list`
-
-
-
-show information and location of installed packages
-
-`pip show <package-name>`
-
-
-pip default installation path (user site directory):
-
-```
-/home/$USER/.local/lib/pythonX.X/site-packages/ where X.X is the Python version.
+### 3.1 Create an environment
+```bash
+conda create -n myproj -c conda-forge python=3.11
+conda activate myproj
+# core scientific stack via conda first
+conda install numpy pandas scipy
+# GPU / PyTorch example (adjust per vendor guidance)
+conda install pytorch cudatoolkit=12.1 -c pytorch -c nvidia
+# pip‑only packages
+python -m pip install fastapi uvicorn[standard]
 ```
 
-show the installed path: 
-
-
-```
-pip list --format=freeze | cut -d "=" -f 1 | xargs -n 1 pip show | grep "Name\|Location"
+### 3.2 Env location (prefix)
+```bash
+conda create --prefix /abs/path/to/env python=3.11
 ```
 
-
-###  update pip
-
-`pip install --upgrade pip`
- 
-
-## Isolating a Conda environment from the global or user site packages
-
-
+### 3.4 Listing & updating
+```bash
+conda info --envs           # list envs
+conda list                  # packages in current env
+conda update conda          # update conda itself
+conda update anaconda       # update distribution meta-package (optional)
+conda update --all          # update all packages in current env
+conda update -n myproj --all
 ```
+
+---
+
+## 4) Pip inside Conda envs (the safe way)
+- Prefer `python -m pip install package` so you hit the **pip tied to the active interpreter**.
+- Avoid `pip install --user` **inside** a conda env (installs outside the env and confuses imports).
+- Inspect paths:
+```bash
+which -a python pip
+python -m site --user-base
+python -m site --user-site
+```
+- Show packages & locations:
+```bash
+pip list
+pip freeze
+pip show <PACKAGE>
+```
+
+### Isolating from user site packages
+```bash
+unset PYTHONPATH
+export PYTHONNOUSERSITE=1
+conda activate myproj
 python -m site
 ```
 
-provides you with a list of directories that Python searches for modules
+---
 
-
-1. **sys.path**: A list showing the paths to directories Python will search for modules. This list will include directories within the currently activated conda environment, such as its `lib/pythonX.Y/site-packages` directory, where `X.Y` is the Python version (e.g., `3.8`). This is where Python looks for installed packages.
-
-2. **USER_BASE**: The path to the user's base directory for user installations as defined by PEP 370. This is often `~/.local` in Linux, but within a conda environment, this might not be particularly relevant.
-
-3. **USER_SITE**: The path to the user site-packages directory. Like `USER_BASE`, this is more relevant for user installations outside of virtual environments.
-
-4. **ENABLE_USER_SITE**: Whether the user-specific site-packages directory is enabled. This can be `True` or `False`, and within a conda environment, it's typically not as relevant since dependency management is handled by conda.
-
-5. **site-packages directories**: Listing of all `site-packages` directories that Python will search. This will include the path to the site-packages directory within your activated conda environment, ensuring that any packages installed into the environment are available for import in your Python sessions.
-
-
-to isolate your environment:
-
+## 5) Reproducibility strategies
+### 5.1 `environment.yml` (portable spec)
+Create from a working env:
+```bash
+# Portable-ish (keeps versions but drops build hashes)
+conda env export --no-builds | grep -v "^prefix:" > environment.yml
 ```
-unset PYTHONPATH
-export PYTHONNOUSERSITE=1
-```
-and then 
-
-```
-conda activate <conda-environment>
+If you want **minimal** top‑level spec (cleaner, may omit pip):
+```bash
+conda env export --from-history | grep -v "^prefix:" > environment.yml
 ```
 
+Add pip entries either directly or through a requirements file. From the active env, capture your pip packages:
+
+
+#### Why `grep -v "^prefix:"`?
+
+When you do:
+
+```bash
+conda env export --no-builds > environment.yml
+```
+
+Conda writes a line like:
+
+```
+prefix: /home/you/miniconda3/envs/myenv
+```
+
+That absolute path is **machine-specific**. If you keep it:
+
+* `conda env create -f environment.yml` may try to create the env at that **exact path**, which will fail (or be undesirable) on other machines.
+* It also **leaks your local paths** into the file.
+
+So we strip it:
+
+```bash
+conda env export --no-builds | grep -v "^prefix:" > environment.yml
+```
+
+#### why  `--no-builds`
+It drops build strings (e.g., `py311h123abc_0`) → more portable across platforms while still pinning versions.
+
+
+
+
+### Create/update env from YAML:
+```bash
+conda env create -f environment.yml
+conda env update -n myproj -f environment.yml --prune
+```
+
+### 5.2 Lock files with **conda-lock** (deterministic)
+Install conda-lock once (via Pipx or a small tools env):
+```bash
+pipx install conda-lock      # or: conda create -n tools -c conda-forge conda-lock
+conda-lock --version
+```
+Generate locks per platform and commit them:
+```bash
+conda-lock -f environment.yml -p win-64 -p linux-64
+# produces files like: conda-linux-64.lock
+```
+
+Recreate **exactly** from the lock:
+```bash
+conda-lock install -n myproj conda-linux-64.lock   # pick the file for your OS
+```
+
+### 5.3 Exact clone (same OS/arch only)
+```bash
+conda list --explicit > spec.txt
+conda create -n clone --file spec.txt
+```
+Limitations: includes exact builds; doesn’t capture pip. Pair with `pip freeze > requirements.txt` if needed.
+
+### 5.4 Deployable snapshot with **conda-pack**
+```bash
+conda-pack -n myproj -o myproj.tar.gz
+```
+Great for shipping a frozen env; not a long‑term spec.
+
+---
+
+
+## 6) Day‑to‑day workflow (A→Z)
+1. Create env with Conda; add pip‑only deps with Pip.
+2. Export `environment.yml` and commit.
+3. Generate platform locks with `conda-lock` and commit.
+4. Teammates/CI: use `conda-lock install …` to recreate exactly.
+5. Need a new package? Update YAML → re‑lock → reinstall from lock.
+
+---
+
+## 7) Troubleshooting
+### 7.1 `/usr/bin/python3: No module named pip` (Ubuntu)
+```bash
+# Easiest: install pipx from apt and skip system pip entirely
+sudo apt update && sudo apt install -y pipx && pipx ensurepath && exec $SHELL -l
+
+# Or bootstrap system pip
+sudo apt update && sudo apt install -y python3-venv
+python3 -m ensurepip --upgrade
+python3 -m pip install --user --upgrade pip
+python3 -m pip --version
+```
+
+### 7.2 `pipx` not found after install
+Run `pipx ensurepath` and open a new shell. Ensure `~/.local/bin` is on `PATH` (Linux) or the user Scripts dir on Windows.
+
+### 7.3 Mixed channels/solves are slow or fail
+Prefer one channel, pin Python version, and avoid unnecessary upgrades. Consider `mamba` for faster solves.
+
+### 7.4 Accidentally used `pip install --user` inside a Conda env
+Uninstall the user‑level package (`python -m pip uninstall …` with `PYTHONNOUSERSITE=1` disabled), then reinstall inside the env **without** `--user`.
+
+---
