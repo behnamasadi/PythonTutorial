@@ -194,14 +194,11 @@ to set it false:
 - [Differentiation](calculus/differentiation.ipynb)  
 - [Automatic Differentiation Forward Mode Dual Number](calculus/automatic_differentiation_forward_mode_dual_number.ipynb)
 
-[Data Structure](data_structure)    
-[Jupyter Notebook/ Sympy](Jupyter_Tutorial)  
-[conda and pip](docs/conda_pip.md)  
-[GUI with Python QT5](PyQT5)  
+
 
 # [Python Tutorials](#)
 ### [**Python Basics**](#)
-[Built-in Types and Functions](python_tutorials/built-in_types_and_functions.ipynb)  
+[Built-in Types (Lists, Tuples, Sets, Dictionaries) and Functions](python_tutorials/built-in_types_and_functions.ipynb)  
 [Mutable and Immutable Types](python_tutorials/mutable_and_immutable_types.ipynb)  
 [Numbers Representation in Memory, typing](python_tutorials/numbers_representation_typing.ipynb)  
 [Strings and String Formatting](python_tutorials/strings_and_string_formatting.ipynb)  
@@ -212,16 +209,14 @@ to set it false:
 
 ### [**Data Structures**](#)
 [Python Data Structures set, dict, heapq, collections.deque](python_tutorials/cpp_data_structure_python.ipynb)  
-[Lists, Tuples, Sets, and Dictionaries](python_tutorials/)  
 [Slicing](python_tutorials/slicing.ipynb)  
 [ `*args` and `**kwargs`, Packing and Unpacking Arguments](python_tutorials/args_kwargs_packing_and_unpacking.ipynb)  
-[Arrays (with `array` module and NumPy arrays)](python_tutorials/)  
 [Ellipsis (`...`, three dots)](python_tutorials/ellipsis_three_dots.ipynb)  
 ### [**Functions and Functional Programming**](python_tutorials/)
 [Functions, Call by value/ ref](python_tutorials/functions.ipynb)  
-[`lambda` Functions (Anonymous functions)](#)  
+[`lambda` Functions (Anonymous functions)](python_tutorials/lambda.ipynb)  
 [`yield` and Generators](python_tutorials/generators_yield.ipynb)  
-[Decorators (`@decorator_name`)](#)  
+[Decorators (`@decorator_name`)](python_tutorials/decorator.ipynb)  
 [`functools` (e.g., `lru_cache`, `partial`)](#)  
 
 ### [**Object-Oriented Programming (OOP)**](#)
@@ -236,16 +231,15 @@ to set it false:
 [Creating and Importing Modules](python_tutorials/)  
 [Python Packages and `__init__.py`](python_tutorials/)  
 [`__main__` and Executable Scripts](python_tutorials/)  
-[Virtual Environments and Dependency Management (`venv`, `pip`)](python_tutorials/)  
 [Logging (`logging` module)](python_tutorials/logging.ipynb)  
 
 ### [**File Handling and Serialization**](#)
 [File IO (`open`, `read`, `write`), `with` Statement, Context Managers (`contextlib`)](python_tutorials/file_IO_with_statement_contextlib.ipynb)  
 [Reading/ executing files, absolute/ relative path](python_tutorials/reading_executing_files_absolute_relative_path.ipynb)  
-[JSON](python_tutorials/)  
+[JSON](python_tutorials/json.ipynb)  
 [XML](python_tutorials/)  
-[YAML)](python_tutorials/yaml.ipynb)
-[Pickle (`pickle` module)](python_tutorials/pickle.ipynb)  
+[YAML](python_tutorials/yaml.ipynb)  
+[Pickle](python_tutorials/pickle.ipynb)  
   
 
 ### [**Standard Library and Useful Modules**](#)
@@ -263,7 +257,7 @@ to set it false:
 
 ### [**Data Science and Visualization**](#)
 [NumPy](python_tutorials/numpy_tutorials.ipynb)  
-[Pandas](python_tutorials/panda_explained.ipynb)  
+[Pandas](python_tutorials/pandas.ipynb)  
 [Data Visualization (`matplotlib`, `seaborn`, `plotly`)](python_tutorials/matplotlib.ipynb)  
 [Graph Processing (`networkx`)](python_tutorials/)  
 
@@ -280,11 +274,16 @@ to set it false:
 [Cython for Performance Optimization](python_tutorials/)  
 [Syntactic sugar](python_tutorials/syntactic_sugar.ipynb)  
 [Dataclasses](python_tutorials/dataclasses.ipynb)  
+[Context Manager](python_tutorials/context_manager.ipynb)  
 
 ### [**Miscellaneous and Tips**](#)
 [Python Tips and Tricks](python_tutorials/tips_and_tricks.ipynb)  
 [Code Visualization Tools](#)  
 [Writing Efficient and Pythonic Code](python_tutorials/writing_efficient_and_pythonic_code.ipynb)  
+[Data Structure](data_structure)  
+[Jupyter Notebook/ Sympy](Jupyter_Tutorial)  
+[Conda and pip](docs/conda_pip.md)  
+[GUI with Python QT5](PyQT5)  
 
 ---
 
