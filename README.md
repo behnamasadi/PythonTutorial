@@ -126,6 +126,7 @@ to set it false:
 - [Density Estimation](probability/density_estimation.ipynb)  
 - [Important Extensions](probability/important_extensions.ipynb)  
 - [KL Divergence](probability/KL_divergence.ipynb)  
+- [Jensen's Inequality](probability/jensen_inequality.ipynb)  
 - [Likelihood](probability/likelihood.ipynb)  
   - [Log Likelihood](probability/likelihood.ipynb#Log-Likelihood)  
   - [Likelihood ratio](probability/likelihood.ipynb#Likelihood-ratio)  
