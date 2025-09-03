@@ -236,7 +236,7 @@ to set it false:
 
 ### [**File Handling and Serialization**](#)
 [File IO (`open`, `read`, `write`), `with` Statement, Context Managers (`contextlib`)](python_tutorials/file_IO_with_statement_contextlib.ipynb)  
-[Reading/ executing files, absolute/ relative path](python_tutorials/reading_executing_files_absolute_relative_path.ipynb)  
+[Files absolute/ relative/ norm path](python_tutorials/file_absolute_relative_norm_path.ipynb)  
 [JSON](python_tutorials/json.ipynb)  
 [XML](python_tutorials/)  
 [YAML](python_tutorials/yaml.ipynb)  
