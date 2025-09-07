@@ -21,6 +21,13 @@ conda install -c anaconda networkx
 conda install anaconda::pandas
 conda install conda-forge::acstools
 ```
+
+build tool:
+
+```
+pip install build
+```
+
 then 
 ```
 cd /home/$USER/workspace/
