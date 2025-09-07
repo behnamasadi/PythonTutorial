@@ -229,10 +229,10 @@ to set it false:
 [Magic Methods (`__str__`, `__repr__`, `__call__`, etc.)](python_tutorials/class_objet_orinted.ipynb#Class-magic-methods)  
 
 ### [**Modules, Packages, and Code Organization**](#)
-[Creating and Importing Modules](python_tutorials/)  
-[Python Packages and `__init__.py`](python_tutorials/)  
-[`__main__` and Executable Scripts](python_tutorials/)  
-[Logging (`logging` module)](python_tutorials/logging.ipynb)  
+[Creating and Importing Modules](python_tutorials/modules_packages.ipynb)  
+[Creating Packages](python_tutorials/modules_packages.ipynb#2.-Packages)  
+[Executing Modules (`__main__` )](/python_tutorials/modules_packages.ipynb#1.5-Module-execution-with--m)  
+
 
 ### [**File Handling and Serialization**](#)
 [File IO (`open`, `read`, `write`), `with` Statement, Context Managers (`contextlib`)](python_tutorials/file_IO_with_statement_contextlib.ipynb)  
@@ -249,6 +249,7 @@ to set it false:
 [Command Line Arguments and Flags (`sys.argv`, `argparse`)](python_tutorials/argparse_command_line_arg.ipynb)  
 [`tqdm` (Progress Bar)](python_tutorials/progress_bar_tqdm.ipynb)  
 [`collections` (`Counter`, `defaultdict`, `namedtuple`)](python_tutorials/)  
+[Logging (`logging` module)](python_tutorials/logging.ipynb)  
 
 ### [**Networking and Web Development**](#)
 [HTTP Requests (`urllib`, `requests`)](python_tutorials/)  

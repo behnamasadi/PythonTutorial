@@ -1,3 +1,3 @@
 """
-Get the project root
+Utility package for Python tutorials
 """
