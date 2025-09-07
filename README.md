@@ -291,7 +291,7 @@ to set it false:
 [Writing Efficient and Pythonic Code](python_tutorials/writing_efficient_and_pythonic_code.ipynb)  
 [Data Structure](data_structure)  
 [Jupyter Notebook/ Sympy](Jupyter_Tutorial)  
-[Conda and pip](docs/conda_pip.md)  
+[Conda and pip](python_tutorials/conda_pip.ipynb)  
 [GUI with Python QT5](PyQT5)  
 
 ---
