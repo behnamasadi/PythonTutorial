@@ -9,6 +9,7 @@
 *build*
 # Ignore compiled Python bytecode files
 *.pyc
+*.whl
 # Ignore Python cache directories
 __pycache__/
 # Ignore environment-specific settings
