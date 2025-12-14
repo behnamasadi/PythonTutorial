@@ -214,6 +214,8 @@ to set it false:
 [Exception Handling (`try`, `except`, `finally`), Raising Exceptions (`raise`)](python_tutorials/exception_handling.ipynb)  
 [Assertions (`assert` statement)](python_tutorials/assertions.ipynb)  
 [Doc strings](python_tutorials/docstrings_python.ipynb)
+[Here-document (heredoc)](python_tutorials/here-document_heredoc.ipynb)
+
 
 ### [**Data Structures**](#)
 [Python Data Structures set, dict, heapq, collections.deque](python_tutorials/cpp_data_structure_python.ipynb)  
