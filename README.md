@@ -20,6 +20,7 @@ conda install -c conda-forge jupyterlab
 conda install -c anaconda networkx
 conda install anaconda::pandas
 conda install conda-forge::acstools
+pip install fastapi uvicorn pydantic
 ```
 
 build tool:
@@ -202,6 +203,11 @@ to set it false:
 - [Differentiation](calculus/differentiation.ipynb)  
 - [Automatic Differentiation Forward Mode Dual Number](calculus/automatic_differentiation_forward_mode_dual_number.ipynb)
 
+# [Web APIs and Protocols](#)
+- [REST API + FastAPI](web_apis_protocols/REST_API.md)
+- [Webhooks](web_apis_protocols/webhooks.md)
+- Web API design and consumption
+- (Add links to notebooks/scripts as content is added)
 
 
 # [Python Tutorials](#)
@@ -284,8 +290,10 @@ to set it false:
 [Memory Management and Garbage Collection](python_tutorials/)  
 [Cython for Performance Optimization](python_tutorials/)  
 [Syntactic sugar](python_tutorials/syntactic_sugar.ipynb)  
-[Dataclasses](python_tutorials/dataclasses.ipynb)  
-[Context Manager](python_tutorials/context_manager.ipynb)  
+[Dataclasses](python_tutorials/dataclasses.ipynb)
+[Pydantic (Data Validation)](python_tutorials/pydantic.ipynb)
+[Context Manager](python_tutorials/context_manager.ipynb)
+
 
 ### [**Miscellaneous and Tips**](#)
 [Python Tips and Tricks](python_tutorials/tips_and_tricks.ipynb)  
