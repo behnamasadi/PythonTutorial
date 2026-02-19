@@ -261,10 +261,27 @@ to set it false:
 [`collections` (`Counter`, `defaultdict`, `namedtuple`)](python_tutorials/)  
 [Logging (`logging` module)](python_tutorials/logging.ipynb)  
 
-### [**Networking and Web Development**](web_apis_protocols/)
-[HTTP Requests (`urllib`, `requests`)](python_tutorials/)  
-[Web APIs and Protocols](web_apis_protocols/) (REST, Webhooks, WebSockets, GraphQL, FastAPI, Authentication)  
-[Web Scraping (`BeautifulSoup`, `Scrapy`)](python_tutorials/)  
+
+### [Web APIs and Protocols](web_apis_protocols/)  
+- [REST API + FastAPI](web_apis_protocols/REST_API.md)
+  - [REST Server Example](web_apis_protocols/rest_server.py)
+  - [REST Client Example](web_apis_protocols/rest_client.py)
+- [Webhooks](web_apis_protocols/webhooks.md)
+  - [Webhook Server Example](web_apis_protocols/webhook_server.py)
+- [WebSockets](web_apis_protocols/webSockets.md)
+  - [WebSocket Chat Server Example](web_apis_protocols/websocket_chat_server.py)
+- [GraphQL](web_apis_protocols/GraphQL.md)
+  - [GraphQL Server Example](web_apis_protocols/graphql_server.py)
+  - [GraphQL Client Example](web_apis_protocols/graphql_client.py)
+- [Authentication](web_apis_protocols/authentication/authentication.md)
+  - Basic Auth: [Server](web_apis_protocols/authentication/basic_server.py), [Client](web_apis_protocols/authentication/basic_client.py)
+  - Session (Cookies): [Server](web_apis_protocols/authentication/session_server.py), [Client](web_apis_protocols/authentication/session_client.py)
+  - Bearer Tokens: [Server](web_apis_protocols/authentication/bearer_server.py), [Client](web_apis_protocols/authentication/bearer_client.py)
+  - JWT: [Server](web_apis_protocols/authentication/jwt_server.py), [Client](web_apis_protocols/authentication/jwt_client.py)
+  - API Keys: [Server](web_apis_protocols/authentication/api_key_server.py), [Client](web_apis_protocols/authentication/api_key_client.py)
+  - OAuth2/OIDC (Authorization Code + PKCE): [Server](web_apis_protocols/authentication/oidc_server.py), [Client](web_apis_protocols/authentication/oidc_client.py)
+
+
 
 ### [**Data Science and Visualization**](#)
 [NumPy](python_tutorials/numpy_tutorials.ipynb)  
@@ -300,24 +317,6 @@ to set it false:
 
 ---
 
-# [Web APIs and Protocols](web_apis_protocols/)  
-- [REST API + FastAPI](web_apis_protocols/REST_API.md)
-  - [REST Server Example](web_apis_protocols/rest_server.py)
-  - [REST Client Example](web_apis_protocols/rest_client.py)
-- [Webhooks](web_apis_protocols/webhooks.md)
-  - [Webhook Server Example](web_apis_protocols/webhook_server.py)
-- [WebSockets](web_apis_protocols/webSockets.md)
-  - [WebSocket Chat Server Example](web_apis_protocols/websocket_chat_server.py)
-- [GraphQL](web_apis_protocols/GraphQL.md)
-  - [GraphQL Server Example](web_apis_protocols/graphql_server.py)
-  - [GraphQL Client Example](web_apis_protocols/graphql_client.py)
-- [Authentication](web_apis_protocols/authentication/authentication.md)
-  - Basic Auth: [Server](web_apis_protocols/authentication/basic_server.py), [Client](web_apis_protocols/authentication/basic_client.py)
-  - Session (Cookies): [Server](web_apis_protocols/authentication/session_server.py), [Client](web_apis_protocols/authentication/session_client.py)
-  - Bearer Tokens: [Server](web_apis_protocols/authentication/bearer_server.py), [Client](web_apis_protocols/authentication/bearer_client.py)
-  - JWT: [Server](web_apis_protocols/authentication/jwt_server.py), [Client](web_apis_protocols/authentication/jwt_client.py)
-  - API Keys: [Server](web_apis_protocols/authentication/api_key_server.py), [Client](web_apis_protocols/authentication/api_key_client.py)
-  - OAuth2/OIDC (Authorization Code + PKCE): [Server](web_apis_protocols/authentication/oidc_server.py), [Client](web_apis_protocols/authentication/oidc_client.py)
 
 
 
