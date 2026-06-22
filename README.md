@@ -241,7 +241,7 @@ to set it false:
 ### [**Modules, Packages, and Code Organization**](#)
 [Creating and Importing Modules](python_tutorials/modules_packages.ipynb)  
 [Creating Packages](python_tutorials/modules_packages.ipynb#2.-Packages)  
-[Executing Modules (`__main__` )](/python_tutorials/modules_packages.ipynb#1.5-Module-execution-with--m)  
+[Executing Modules (`__main__` )](python_tutorials/modules_packages.ipynb#1.5-Module-execution-with--m)  
 
 
 ### [**File Handling and Serialization**](#)
@@ -291,8 +291,8 @@ to set it false:
 
 ### [**Testing and Code Quality**](#)
 [Unit Testing (`unittest`, `pytest`)](python_tutorials/)  
-[Linting and Formatting (`pylint`, `black`, `isort`)](python_tutorials/)  
-[Static Code Analysis (`mypy`, `pyflakes`, `pychecker`)](python_tutorials/)  
+[Linting and Formatting (`ruff`, `pylint`, `black`, `isort`)](python_tutorials/type_checkers_mypy_pyright_ruff.ipynb)  
+[Static Type Checking — `mypy` vs `pyright` vs `ruff` (when to use which)](python_tutorials/type_checkers_mypy_pyright_ruff.ipynb)  
 [PEP8 and Google Python Style Guide](python_tutorials/)  
 
 ### [**Advanced Python Topics**](#)
@@ -301,6 +301,9 @@ to set it false:
 [Memory Management and Garbage Collection](python_tutorials/)  
 [Cython for Performance Optimization](python_tutorials/)  
 [Syntactic sugar](python_tutorials/syntactic_sugar.ipynb)  
+[Type Hints & Annotations (`typing`)](python_tutorials/typing_type_hints_type_annotations.ipynb)  
+[Typed Contracts (Protocols, `TypedDict`, runtime validation, Design by Contract)](python_tutorials/typed_contracts.ipynb)  
+[Static Type Checking & Linting — mypy vs pyright vs ruff](python_tutorials/type_checkers_mypy_pyright_ruff.ipynb)  
 [Dataclasses](python_tutorials/dataclasses.ipynb)
 [Pydantic (Data Validation)](python_tutorials/pydantic.ipynb)
 [Context Manager](python_tutorials/context_manager.ipynb)
