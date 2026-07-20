@@ -306,6 +306,7 @@ to set it false:
 [Linting and Formatting (`ruff`, `pylint`, `black`, `isort`)](python_tutorials/type_checkers_mypy_pyright_ruff.ipynb)  
 [Static Type Checking — `mypy` vs `pyright` vs `ruff` (when to use which)](python_tutorials/type_checkers_mypy_pyright_ruff.ipynb)  
 [PEP8 and Google Python Style Guide](python_tutorials/)  
+[Running GitHub Actions locally with `act` (test CI before you push)](docs/run_github_actions_locally_with_act.md)  
 
 ### [**Advanced Python Topics**](#)
 [Concurrency and Parallelism (`threading`, `multiprocessing`, `asyncio`)](python_tutorials/)  
