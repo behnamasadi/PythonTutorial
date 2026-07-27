@@ -59,4 +59,11 @@ cmake -S 07_vectors -B 07_vectors/build -DCMAKE_BUILD_TYPE=Release \
 cmake --build 07_vectors/build -j >/dev/null
 (cd 07_vectors && PYTHONPATH=build "$PY" run_vectors.py)
 
+# --------------------------- 8. inheritance, callbacks, GIL (pybind11)
+hr "inheritance & callbacks (pybind11)"
+cmake -S 08_inheritance -B 08_inheritance/build -DCMAKE_BUILD_TYPE=Release \
+      -DPython_EXECUTABLE="$(command -v "$PY")" >/dev/null
+cmake --build 08_inheritance/build -j >/dev/null
+(cd 08_inheritance && PYTHONPATH=build "$PY" run_inheritance.py)
+
 hr "all built and ran"

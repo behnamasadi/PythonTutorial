@@ -23,6 +23,7 @@ python bench.py      # per-call overhead of each technique
 | [`05_nanobind/`](05_nanobind/) | nanobind | Same module, `s/py::/nb::/`, plus a generated `.pyi` |
 | [`06_swig/`](06_swig/) | SWIG | `.i` interface file, typemaps, `%exception` |
 | [`07_vectors/`](07_vectors/) | pybind11 | **`std::vector<T>`: copy vs opaque vs zero-copy vs structs** |
+| [`08_inheritance/`](08_inheritance/) | pybind11 | **Python subclassing a C++ abstract class (trampolines), callbacks, threads/GIL, enums, pickling** |
 
 Build artifacts (`build/`, `*.so`, generated `.cpp`/`.cxx`/`.py`) are gitignored.
 

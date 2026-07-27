@@ -11,7 +11,7 @@ All the code referenced here lives in
 ```bash
 cd docs/calling_cpp_from_python
 pip install pybind11 nanobind cython cffi swig numpy setuptools
-./run_all.sh          # builds and runs all 7 examples
+./run_all.sh          # builds and runs all 8 examples
 python bench.py         # measures per-call overhead of each
 ```
 
@@ -26,13 +26,14 @@ python bench.py         # measures per-call overhead of each
 5. [How data is passed: the three modes](#5-how-data-is-passed-the-three-modes)
 6. [`std::vector<T>` — the four answers](#6-stdvectort--the-four-answers)
 7. [Classes, ownership and lifetime](#7-classes-ownership-and-lifetime)
-8. [Exceptions](#8-exceptions)
-9. [The GIL and threading](#9-the-gil-and-threading)
-10. [How the big projects actually do it](#10-how-the-big-projects-actually-do-it)
-11. [Measured overhead](#11-measured-overhead)
-12. [Packaging and shipping](#12-packaging-and-shipping)
-13. [Which one should you use?](#13-which-one-should-you-use)
-14. [The bugs everyone hits](#14-the-bugs-everyone-hits)
+8. [Inheritance and callbacks: when C++ calls Python](#8-inheritance-and-callbacks-when-c-calls-python)
+9. [Exceptions](#9-exceptions)
+10. [The GIL and threading](#10-the-gil-and-threading)
+11. [How the big projects actually do it](#11-how-the-big-projects-actually-do-it)
+12. [Measured overhead](#12-measured-overhead)
+13. [Packaging and shipping](#13-packaging-and-shipping)
+14. [Which one should you use?](#14-which-one-should-you-use)
+15. [The bugs everyone hits](#15-the-bugs-everyone-hits)
 
 ---
 
@@ -192,7 +193,7 @@ When Python executes `mathlib_pb.add(2.0, 3.0)`:
    the thread state while the C function returns `nullptr`.
 
 Steps 1, 2, 3, 5 and 6 are pure overhead — measured at ~44 ns for pybind11 in
-[§11](#11-measured-overhead). Step 4 is the work you actually wanted. **The
+[§11](#12-measured-overhead). Step 4 is the work you actually wanted. **The
 whole art of binding design is making step 4 large relative to the rest.** One
 call that processes a 10-million-element array is excellent; ten million calls
 that each add two numbers is a catastrophe.
@@ -534,7 +535,188 @@ long after the call. If you use `shared_ptr` in C++, declare it as the holder �
 
 ---
 
-## 8. Exceptions
+## 8. Inheritance and callbacks: when C++ calls Python
+
+Everything so far has arrows pointing one way — Python calls C++. Real libraries
+need the other direction too: an abstract base class you are meant to subclass,
+or a function that takes a callback. This is the section that separates "I bound
+some functions" from "I bound a library."
+
+Runnable version:
+[`08_inheritance/`](calling_cpp_from_python/08_inheritance/). All output quoted
+below is real.
+
+### The problem
+
+```cpp
+class Filter {
+ public:
+  virtual double apply(double x) const = 0;   // pure virtual
+  virtual std::string name() const { return "filter"; }
+  double apply_all(const std::vector<double>& xs) const;  // C++ loop calling apply()
+};
+double pipeline_sum(const Filter& f, const std::vector<double>& xs);
+```
+
+`pipeline_sum` is compiled C++ that loops and calls `apply()` through a vtable.
+If a *Python* class overrides `apply`, C++ must somehow execute Python — but C++
+does not know Python exists. Binding `Filter` naively gives you a class Python
+can instantiate but not usefully subclass.
+
+### The solution: a trampoline class
+
+Insert a C++ class that derives from `Filter` and whose every virtual method
+asks Python "did a subclass override this?":
+
+```cpp
+class PyFilter : public plugin::Filter {
+ public:
+  using plugin::Filter::Filter;              // inherit constructors
+
+  double apply(double x) const override {
+    PYBIND11_OVERRIDE_PURE(double, plugin::Filter, apply, x);
+    //                     ^return ^parent      ^method ^args
+  }
+  std::string name() const override {
+    PYBIND11_OVERRIDE(std::string, plugin::Filter, name, );  // note trailing comma
+  }
+};
+```
+
+Then name the trampoline as the **second template argument**:
+
+```cpp
+py::class_<plugin::Filter, PyFilter>(m, "Filter")     // <-- PyFilter is the trampoline
+    .def(py::init<>())
+    .def("apply", &plugin::Filter::apply, "x"_a)
+    .def("apply_all", &plugin::Filter::apply_all, "xs"_a);
+
+py::class_<plugin::Scale, plugin::Filter>(m, "Scale") // <-- declares the BASE
+    .def(py::init<double>(), "factor"_a = 2.0);
+```
+
+`PyFilter` is an ordinary C++ class, so C++ holds it as a `Filter&` and
+dispatches virtually with no idea anything unusual is happening. The macro body
+is what re-enters the interpreter (acquiring the GIL on the way in).
+
+The two macro flavours:
+
+| Macro | Meaning |
+|---|---|
+| `PYBIND11_OVERRIDE_PURE` | No C++ fallback. Not overridden in Python → clean `RuntimeError` |
+| `PYBIND11_OVERRIDE` | Falls back to the C++ base implementation |
+
+### It works
+
+```python
+class Square(p.Filter):
+    def apply(self, x):  return x * x            # overrides a PURE virtual
+    def name(self):      return "square (from Python)"
+
+class Offset(p.Filter):
+    def __init__(self, k):
+        super().__init__()                       # REQUIRED — see below
+        self.k = k
+    def apply(self, x):  return x + self.k       # name() not overridden
+```
+
+```
+  class      defined in name()                   apply(5)
+  ----------------------------------------------------------
+  Scale      C++        scale                    50.0
+  Square     Python     square (from Python)     25.0
+  Offset     Python     filter                   105.0
+
+  pipeline_sum(Scale  , [1.0, 2.0, 3.0, 4.0]) = 100.0
+  pipeline_sum(Square , [1.0, 2.0, 3.0, 4.0]) = 30.0
+  pipeline_sum(Offset , [1.0, 2.0, 3.0, 4.0]) = 410.0
+```
+
+`Offset.name()` returns `"filter"` — the C++ default, because `PYBIND11_OVERRIDE`
+(non-pure) fell back. And `pipeline_sum` ran its loop entirely in C++ while
+Python computed each element.
+
+### The two ways subclasses go wrong
+
+Both are caught cleanly rather than crashing:
+
+```
+  forgot the pure virtual -> RuntimeError: Tried to call pure virtual function "plugin::Filter::apply"
+  forgot super().__init__ -> TypeError: plugin_pb.Filter.__init__() must be called when overriding __init__
+```
+
+The second is the single most common trampoline bug. Overriding `__init__`
+without chaining to the base means the C++ half of the object is never
+constructed — pybind11 detects it at construction time.
+
+### Callbacks: any Python callable becomes a `std::function`
+
+Include `<pybind11/functional.h>` and a `std::function` parameter accepts
+anything callable:
+
+```cpp
+m.def("transform_sum", &plugin::transform_sum, "xs"_a, "fn"_a);
+// double transform_sum(const std::vector<double>&, const std::function<double(double)>&)
+```
+
+```
+  lambda            -> 1000.0
+  builtin (abs)     -> 3.0
+  def               -> 100.0
+  bound method      -> 20.0        # p.Scale(2.0).apply — a bound C++ method!
+  __call__ object   -> 12.0
+```
+
+**Storing** a callback is where lifetime bites. The `std::function` holds a
+reference, so the Python object stays alive — but if the callback closes over the
+owning C++ object you get a reference cycle that Python's GC **cannot see
+through**, and it leaks. Use a `weakref` in the closure when that applies.
+
+### Callbacks from C++ threads: the deadlock
+
+```cpp
+m.def("parallel_apply",
+      [](const std::vector<double>& xs, const std::function<double(double)>& fn,
+         std::size_t n_threads) {
+        py::gil_scoped_release release;      // <-- REQUIRED
+        return plugin::parallel_apply(xs, fn, n_threads);
+      });
+```
+
+Two rules, and violating the first is a hang, not a crash:
+
+1. **Release the GIL before spawning.** The workers must acquire it to call
+   Python; if the calling thread holds it while `join()`ing them, you deadlock
+   forever. This is *the* classic binding hang.
+2. **Each worker must acquire the GIL.** pybind11's `std::function` wrapper does
+   this for you, so the C++ lambda body needs no extra code.
+
+Be clear about what this buys: **no parallelism for the Python callback**, since
+the GIL serialises the calls. It is the right pattern for a C++-heavy kernel
+that occasionally calls back. Real speedup requires the work to stay in C++.
+
+### Two more things you will need
+
+**Enums** — `py::enum_` produces a proper Python type:
+
+```cpp
+py::enum_<plugin::Mode>(m, "Mode")
+    .value("Fast", plugin::Mode::Fast)
+    .value("Accurate", plugin::Mode::Accurate);
+```
+
+**Pickling** — bound objects are *not* picklable by default, which is what
+breaks `multiprocessing` with C++ objects. Supply the state explicitly:
+
+```cpp
+.def(py::pickle(
+    [](const plugin::Scale& s) { return py::make_tuple(s.factor()); },   // __getstate__
+    [](py::tuple t) { return plugin::Scale(t[0].cast<double>()); }))     // __setstate__
+```
+
+---
+
+## 9. Exceptions
 
 A C++ exception must never unwind through CPython's C frames — that is
 undefined behaviour, usually a hard crash. Every binding layer catches at the
@@ -579,7 +761,7 @@ int ml_divide(double a, double b, double* out) {
 
 ---
 
-## 9. The GIL and threading
+## 10. The GIL and threading
 
 The Global Interpreter Lock is held whenever Python code runs. Your C++ function
 inherits it, which means **a long C++ call blocks every other Python thread** —
@@ -604,7 +786,7 @@ and arguably more important: your C++ must then be genuinely thread-safe.)
 
 ---
 
-## 10. How the big projects actually do it
+## 11. How the big projects actually do it
 
 This is the most instructive part, because the answers are not uniform — each
 project's choice follows from its constraints.
@@ -704,7 +886,7 @@ ABI already exists.**
 
 ---
 
-## 11. Measured overhead
+## 12. Measured overhead
 
 From [`bench.py`](calling_cpp_from_python/bench.py) — best of 7 runs of 200,000
 calls of `add(2.0, 3.0)`, so this is *almost entirely* boundary-crossing cost,
@@ -758,7 +940,7 @@ How to read this:
 
 ---
 
-## 12. Packaging and shipping
+## 13. Packaging and shipping
 
 The modern standard for a pybind11/nanobind project is **scikit-build-core**,
 which lets `pip install .` drive your existing CMake build:
@@ -817,7 +999,7 @@ Points that bite people:
 
 ---
 
-## 13. Which one should you use?
+## 14. Which one should you use?
 
 ```
 Is the library plain C (no C++ classes)?
@@ -840,7 +1022,7 @@ once you know it.
 
 ---
 
-## 14. The bugs everyone hits
+## 15. The bugs everyone hits
 
 1. **Forgetting `#include <pybind11/stl.h>`** — `std::vector`/`std::map`
    arguments become unusable opaque objects with a baffling error message.
@@ -865,8 +1047,17 @@ once you know it.
     `double` and you get silent garbage, or a segfault.
 11. **The module name not matching the filename** — `PYBIND11_MODULE(foo, m)`
     must be built as `foo*.so`, or the import fails cryptically.
-12. **Calling across the boundary in a tight loop** — see
-    [§11](#11-measured-overhead). Batch it.
+12. **Binding a virtual method without a trampoline** — Python subclasses appear
+    to work, but C++ never sees the override. See
+    [§8](#8-inheritance-and-callbacks-when-c-calls-python).
+13. **Overriding `__init__` without `super().__init__()`** — the C++ half of the
+    object is never constructed.
+14. **`join()`ing C++ threads while holding the GIL** — a permanent hang, not a
+    crash. Release it before spawning.
+15. **Assuming bound objects are picklable** — they are not without
+    `py::pickle`, which is what breaks `multiprocessing`.
+16. **Calling across the boundary in a tight loop** — see
+    [§11](#12-measured-overhead). Batch it.
 
 ---
 
@@ -882,6 +1073,7 @@ once you know it.
 | [`05_nanobind/`](calling_cpp_from_python/05_nanobind/) | nanobind | The same module, side by side + generated `.pyi` |
 | [`06_swig/`](calling_cpp_from_python/06_swig/) | SWIG | `.i` interface file, typemaps, `%exception` |
 | [`07_vectors/`](calling_cpp_from_python/07_vectors/) | pybind11 | **`std::vector<T>`: copy vs opaque vs zero-copy vs structs** |
+| [`08_inheritance/`](calling_cpp_from_python/08_inheritance/) | pybind11 | **Trampolines, callbacks, threads/GIL, enums, pickling** |
 | [`bench.py`](calling_cpp_from_python/bench.py) | all | Per-call overhead measurement |
 
 ```bash
