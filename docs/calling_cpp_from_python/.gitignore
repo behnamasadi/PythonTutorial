@@ -1,0 +1,20 @@
+# build artifacts produced by run_all.sh
+build/
+*.so
+*.o
+*.pyd
+*.dylib
+
+# cffi
+_mathlib_cffi.c
+_mathlib_cffi.cpp
+_mathlib_cffi.o
+
+# Cython
+mathlib_cy.cpp
+
+# SWIG (generated: both the wrapper and the Python shim)
+mathlib_swig_wrap.cxx
+mathlib_swig.py
+
+__pycache__/

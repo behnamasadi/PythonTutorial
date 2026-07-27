@@ -313,6 +313,7 @@ to set it false:
 [Metaprogramming (Metaclasses, `type`, `exec`, `eval`)](python_tutorials/)  
 [Memory Management and Garbage Collection](python_tutorials/)  
 [Cython for Performance Optimization](python_tutorials/)  
+[Calling C++ from Python (`pybind11`, `nanobind`, `Cython`, `ctypes`, `cffi`, `SWIG`)](docs/calling_cpp_from_python.md)  
 [Syntactic sugar](python_tutorials/syntactic_sugar.ipynb)  
 [Type Hints & Annotations (`typing`)](python_tutorials/typing_type_hints_type_annotations.ipynb)  
 [Typed Contracts (Protocols, `TypedDict`, runtime validation, Design by Contract)](python_tutorials/typed_contracts.ipynb)  
