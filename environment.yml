@@ -37,6 +37,8 @@ dependencies:
   - requests
   - graphql-core
   - mcp
+  - ollama-python # local LLMs (Qwen) through Ollama, used by the MCP notebook
+  - anthropic # Claude API SDK, alternative LLM in the MCP notebook
 
   # GUI, images and misc
   - pyqt # PyQt5
