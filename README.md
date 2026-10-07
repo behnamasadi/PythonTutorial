@@ -40,6 +40,12 @@ conda activate PythonTutorial
 pip install -e python_tutorials/math_package -e python_tutorials/utils
 ```
 
+Link the code into the environment, so it shows up under the env's `src` directory while the files stay in your workspace (run it with the env active):
+
+```
+ln -s ~/workspace/PythonTutorial "$CONDA_PREFIX/src"
+```
+
 To add a dependency, add it to `environment.yml`, then update your environment and regenerate the lock file:
 
 ```
