@@ -36,6 +36,7 @@ dependencies:
   - httpx
   - requests
   - graphql-core
+  - mcp
 
   # GUI, images and misc
   - pyqt # PyQt5
