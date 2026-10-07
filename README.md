@@ -11,30 +11,43 @@ This repository contains my snippet codes for my Python projects. It includes va
 <!-- badges: end -->
 
 
-Dependencies:
-```
-conda create -n PythonTutorial
-conda activate PythonTutorial
-conda install scipy numpy matplotlib pywavelets scikit-image anaconda::ipython anaconda::sympy
-conda install -c conda-forge jupyterlab
-conda install -c anaconda networkx
-conda install anaconda::pandas
-conda install conda-forge::acstools
-pip install fastapi uvicorn pydantic
-```
+## Installation
 
-build tool:
+Dependencies are declared in two files:
+
+- [`environment.yml`](environment.yml): the packages this repository uses **directly**, unpinned and grouped by topic. Edit this file by hand when you add or remove a package.
+- [`conda-lock.yml`](conda-lock.yml): every package, transitive ones included, pinned to an exact version for Linux, macOS (Apple silicon) and Windows. It is generated from `environment.yml`; never edit it by hand.
+
+Clone the repository:
 
 ```
-pip install build
-```
-
-then 
-```
-cd /home/$USER/workspace/
 git clone git@github.com:behnamasadi/PythonTutorial.git
-ln -s /home/$USER/workspace/PythonTutorial /home/$USER/anaconda3/envs/PythonTutorial/src
+cd PythonTutorial
 ```
+
+Then either install the latest compatible versions:
+
+```
+conda env create -f environment.yml
+conda activate PythonTutorial
+```
+
+or reproduce the exact, tested environment from the lock file (`pipx install conda-lock`, or prefix the command with `uvx`):
+
+```
+conda-lock install -n PythonTutorial conda-lock.yml
+conda activate PythonTutorial
+pip install -e python_tutorials/math_package -e python_tutorials/utils
+```
+
+To add a dependency, add it to `environment.yml`, then update your environment and regenerate the lock file:
+
+```
+conda env update -f environment.yml --prune
+conda-lock -f environment.yml -p linux-64 -p osx-arm64 -p win-64
+```
+
+Commit both files together. Avoid `conda env export`: it dumps the whole resolved environment, which hides what the project actually needs.
 
 If you get `conda: command not found` just add it to the path:
 
